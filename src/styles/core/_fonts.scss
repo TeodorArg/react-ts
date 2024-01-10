@@ -1,0 +1,13 @@
+//@import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Wix Madefor Display", sans-serif;
+  @include font(rem(16px), rem(20px));
+}
+
+.font {
+  &--small {
+    @include font(rem(14px), rem(24px));
+    font-weight: normal;
+  }
+}

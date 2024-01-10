@@ -1,0 +1,18 @@
+body {
+  @include font(rem(16px), rem(18px));
+  font-family: Biryani;
+  font-weight: 400;
+  color: var(--main-color);
+}
+
+// Style for texts
+.txt {
+  &--underline {
+    text-decoration: underline;
+    text-underline-offset: 23%;
+    text-decoration-thickness: 1px;
+  }
+  &--small {
+    @include font(rem(14px), rem(18px));
+  }
+}
