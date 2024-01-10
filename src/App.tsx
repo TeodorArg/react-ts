@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from './stories/icon/Icon';
 import logo from './logo.svg';
 import './App.scss';
 
@@ -19,6 +20,12 @@ function App() {
         >
           Learn React
         </a>
+        <Icon
+          iconColor="#bfe8a3"
+          iconName="inst"
+          iconSubColor="#e31f1f"
+          iconThirdColor="#0ed6f1"
+        />
       </header>
     </div>
   );

@@ -60,7 +60,7 @@ gulp.task("sprites", () => {
 });
 
 function fileNameFormatter(filename) {
-  return filename.replace(/(.svg)/g, "") + ",";
+  return '"' + filename.replace(/(.svg)/g, "") + '",';
 }
 
 const concatFilenamesOptions = {
