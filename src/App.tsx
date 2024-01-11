@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon } from './stories/icon/Icon';
 import logo from './logo.svg';
 import './App.scss';
