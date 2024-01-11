@@ -115,10 +115,8 @@ export const imagesBuild = gulp.series("images");
 // Build Favicons
 export const faviconBuild = gulp.series("favicons");
 // Build Icons Sprite
-export const iconsBuild = gulp.series("sprites");
-// Buil Txt List of Icons
-export const iconsList = gulp.series("listOfIcons");
+export const iconsBuild = gulp.series("sprites", "listOfIcons");
 // Default task
-export const development = gulp.series("sprites", "images", "watch");
+export const development = gulp.series(iconsBuild, imagesBuild, "watch");
 
 export default development;

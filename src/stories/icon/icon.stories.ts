@@ -12,7 +12,7 @@ function listOfIconsName(iconListFile: any) {
 }
 
 const meta = {
-  title: "Example/Icon",
+  title: "UI/Icons",
   component: Icon,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout

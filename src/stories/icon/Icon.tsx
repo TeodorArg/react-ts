@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import './icon.scss';
 import Icons from '../../assets/icons/sprites/icons.svg';
 
 interface IconProps {
@@ -28,6 +27,8 @@ const SVG = styled('svg')`
   --icon-color: ${(props: IconProps) => props.iconColor };
   --icon-sub-color: ${(props: IconProps) => props.iconSubColor};
   --icon-third-color: ${(props: IconProps) => props.iconThirdColor};
+  display: inline-flex;
+  height: inherit;
 `
 
 /**
