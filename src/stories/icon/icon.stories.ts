@@ -2,14 +2,12 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Icon } from "./Icon";
 import Fileicons from "../assets/sprites/fileicons.md";
 
-// Function to emulate pausing between interactions
 function listOfIconsName(iconListFile: any) {
   const file = iconListFile
     .replace(/\n/g, "")
     .replace(/^\s+|\s+$/g, "")
     .replace(/[,]$/g, "")
     .split(",");
-  console.log(file);
   return file;
 }
 
