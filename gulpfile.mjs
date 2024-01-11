@@ -60,7 +60,7 @@ gulp.task("sprites", () => {
 });
 
 function fileNameFormatter(filename) {
-  return '"' + filename.replace(/(.svg)/g, "") + '",';
+  return "" + filename.replace(/(.svg)/g, "") + ",";
 }
 
 const concatFilenamesOptions = {
@@ -72,7 +72,7 @@ gulp.task("listOfIcons", () => {
   return gulp
     .src("src/assets/icons/*.svg")
     .pipe(concatFilenames("fileicons.md", concatFilenamesOptions))
-    .pipe(gulp.dest("src/assets/icons/sprites"));
+    .pipe(gulp.dest("src/stories/assets/sprites"));
 });
 
 // Clean svg-icon folder

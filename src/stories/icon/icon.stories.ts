@@ -1,5 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Icon } from "./Icon";
+import Fileicons from "../assets/sprites/fileicons.md";
+
+// Function to emulate pausing between interactions
+function listOfIconsName(iconListFile: any) {
+  const file = iconListFile
+    .replace(/\n/g, "")
+    .replace(/^\s+|\s+$/g, "")
+    .replace(/[,]$/g, "")
+    .split(",");
+  console.log(file);
+  return file;
+}
 
 const meta = {
   title: "Example/Icon",
@@ -13,30 +25,7 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     iconName: {
-      options: [
-        "arrow-slider",
-        "arrow-up",
-        "arrow",
-        "badge",
-        "burger",
-        "check-mark",
-        "close",
-        "discount",
-        "inst-fill",
-        "inst",
-        "map-marker-fill",
-        "map-marker",
-        "money",
-        "phone-fill",
-        "phone",
-        "square-time",
-        "telegram-fill",
-        "telegram",
-        "vk-fill",
-        "vk",
-        "youtube-fill",
-        "youtube",
-      ],
+      options: listOfIconsName(Fileicons),
       control: { type: "radio" },
     },
   },
