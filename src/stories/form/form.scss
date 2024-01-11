@@ -1,0 +1,78 @@
+@import "../../styles/core/core.scss";
+
+// Style for FORM element
+.form {
+  &__question {
+    display: grid;
+    gap: rem(15px);
+    @include minmaxwidht(rem(240px), 100%, 880px);
+  }
+}
+
+// Style for FORM elements like input & etc
+.form__group {
+  @include flex(flex-start, flex-start);
+  &--item {
+    height: rem(60px);
+    @include font(rem(16px), normal);
+    outline: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    border: var(--form-inputs-border);
+    color: var(--main-color);
+  }
+}
+
+.form__input {
+  width: 100%;
+  @include transition;
+  @include placeholder {
+    color: var(--placeholder-color);
+    transform: translateX(0);
+    opacity: 1;
+    @include transition;
+  }
+  &:hover,
+  &:focus {
+    border: 1px solid var(--main-color);
+  }
+  &:focus {
+    @include placeholder {
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+  }
+}
+
+// Style for buttons
+.form__button {
+  margin-top: 15px;
+}
+
+// Styles for Form Note
+.form__note {
+  margin-top: 30px;
+  @include minmaxwidht(rem(240px), 100%, 300px);
+}
+
+// Style if form has errors
+.form__group--error {
+  .form__group {
+    &--item {
+      border-color: var(--error);
+    }
+    &--error-text {
+      color: var(--error);
+    }
+  }
+}
+
+// Hide arrow in number input
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}

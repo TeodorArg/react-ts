@@ -60,7 +60,7 @@ gulp.task("sprites", () => {
 });
 
 function fileNameFormatter(filename) {
-  return filename.replace(/(.svg)/g, "") + ",";
+  return "" + filename.replace(/(.svg)/g, "") + ",";
 }
 
 const concatFilenamesOptions = {
@@ -72,7 +72,7 @@ gulp.task("listOfIcons", () => {
   return gulp
     .src("src/assets/icons/*.svg")
     .pipe(concatFilenames("fileicons.md", concatFilenamesOptions))
-    .pipe(gulp.dest("src/assets/icons/sprites"));
+    .pipe(gulp.dest("src/stories/assets/sprites"));
 });
 
 // Clean svg-icon folder
@@ -115,10 +115,8 @@ export const imagesBuild = gulp.series("images");
 // Build Favicons
 export const faviconBuild = gulp.series("favicons");
 // Build Icons Sprite
-export const iconsBuild = gulp.series("sprites");
-// Buil Txt List of Icons
-export const iconsList = gulp.series("listOfIcons");
+export const iconsBuild = gulp.series("sprites", "listOfIcons");
 // Default task
-export const development = gulp.series("sprites", "images", "watch");
+export const development = gulp.series(iconsBuild, imagesBuild, "watch");
 
 export default development;

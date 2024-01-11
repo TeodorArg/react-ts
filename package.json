@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,6 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.3",
+    "react-number-format": "^5.3.1",
     "react-scripts": "5.0.1",
     "sass": "^1.69.7",
     "sass-rem": "^4.0.0",
@@ -31,12 +35,15 @@
     "faviconBuild": "gulp faviconBuild",
     "imagesBuild": "gulp imagesBuild",
     "iconsBuild": "gulp iconsBuild & gulp iconsList",
-    "developmentHtml": "gulp"
+    "developmentHtml": "gulp",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:storybook/recommended"
     ]
   },
   "browserslist": {
@@ -52,14 +59,27 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.7",
+    "@storybook/addon-interactions": "^7.6.7",
+    "@storybook/addon-links": "^7.6.7",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/blocks": "^7.6.7",
+    "@storybook/preset-create-react-app": "^7.6.7",
+    "@storybook/react": "^7.6.7",
+    "@storybook/react-webpack5": "^7.6.7",
+    "@storybook/test": "^7.6.7",
     "del": "^7.1.0",
+    "eslint-plugin-storybook": "^0.6.15",
     "gulp": "^4.0.2",
     "gulp-concat-filenames": "^1.2.0",
     "gulp-debug": "^5.0.1",
     "gulp-favicons": "^4.0.1",
     "gulp-svg-sprite": "^2.0.3",
     "gulp-webp": "^5.0.0",
-    "imagemin-webp": "^8.0.0"
+    "imagemin-webp": "^8.0.0",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.6.7",
+    "webpack": "^5.89.0"
   },
   "husky": {
     "hooks": {

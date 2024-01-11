@@ -1,0 +1,101 @@
+@import "../../../styles/core/core.scss";
+
+.btn {
+  &-house {
+    font-family: "Wix Madefor Display", sans-serif;
+    border-radius: rem(8px);
+    text-transform: uppercase;
+    width: fit-content;
+    border: none;
+    font-weight: 700;
+    padding: 0 32px;
+    @include flex();
+    @include font(rem(14px), 1);
+    white-space: nowrap;
+    color: var(--main, #0a0a0a);
+    @include media("min", "md") {
+      @include font(rem(16px), 1);
+    }
+    &:hover,
+    &:focus {
+      transition: all 0.25s linear;
+      cursor: pointer;
+    }
+  }
+  &--yellow {
+    background: var(--yellow, #fbda94);
+    &:hover,
+    &:focus {
+      background: var(--yellowHover, #ab8a44);
+    }
+  }
+  &--black {
+    border: 1px solid var(--main, #0a0a0a);
+    background: var(--main, #0a0a0a);
+    color: var(--white, #ffffff);
+    &:hover,
+    &:focus {
+      background: var(--white, #ffffff);
+      color: var(--main, #0a0a0a);
+    }
+    &.btn--small {
+      font-weight: 600;
+    }
+  }
+  &--border {
+    border: 2px solid var(--yellow, #fbda94);
+    background: var(--white, #ffffff);
+    &:hover,
+    &:focus {
+      border-color: var(--yellowHover, #ab8a44);
+    }
+    &--think {
+      border: 1px solid var(--main, #0a0a0a);
+      font-weight: 400;
+      background: var(--white, #ffffff);
+      color: var(--main, #0a0a0a);
+      &:hover,
+      &:focus {
+        background: var(--main, #0a0a0a);
+        color: var(--white, #ffffff);
+      }
+    }
+  }
+
+  &--small {
+    height: rem(43px);
+    font-weight: 400;
+    @extend .font--small;
+  }
+  &--medium {
+    height: rem(59px);
+  }
+  &--full {
+    min-width: 280px;
+    width: 100%;
+  }
+  // Rounded
+  &--rounded {
+    width: rem(60px);
+    height: rem(60px);
+    border-radius: 50%;
+    padding: 0;
+    &.btn--icon {
+      .icon {
+        margin-left: 0;
+        --icon-color: #0a0a0a;
+      }
+    }
+  }
+}
+
+// For Icons
+.btn--icon {
+  span {
+    margin-right: 6px;
+  }
+  .icon {
+    margin-left: 6px;
+    width: 16px;
+  }
+}
