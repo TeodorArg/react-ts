@@ -1,0 +1,8 @@
+@import "../form.scss";
+
+.form__group--item.phone {
+  color: var(--placeholder-color);
+  &.focused {
+    color: var(--main-color);
+  }
+}

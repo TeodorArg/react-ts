@@ -1,4 +1,5 @@
-import { Icon } from './stories/icon/Icon';
+import { Icon } from './stories/ui/icon/Icon';
+import { Button } from './stories/ui/button/Button';
 import logo from './logo.svg';
 import './App.scss';
 
@@ -25,6 +26,10 @@ function App() {
           iconSubColor="#e31f1f"
           iconThirdColor="#0ed6f1"
         />
+        <Button btnStyle='black' />
+        <Button btnStyle='black' btnSize='small'/>
+        <Button showIcon={true} iconName='arrow-up'/>
+        <Button showIcon={true} btnRounded={true} iconName='arrow'/>
       </header>
     </div>
   );

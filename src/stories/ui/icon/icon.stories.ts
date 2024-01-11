@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Icon } from "./Icon";
-import Fileicons from "../assets/sprites/fileicons.md";
+import Fileicons from "../../assets/sprites/fileicons.md";
 
 function listOfIconsName(iconListFile: any) {
   const file = iconListFile

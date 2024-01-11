@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import Icons from '../../assets/icons/sprites/icons.svg';
+import Icons from '../../../assets/icons/sprites/icons.svg';
 
 interface IconProps {
   /**
