@@ -1,6 +1,7 @@
 import { Icon } from './stories/ui/icon/Icon';
 import { Button } from './stories/ui/button/Button';
-import { ContactForm } from './stories/components/forms/contact-form/ContactForm';
+import { FormInputPhone } from './stories/form-control/form-input-phone/FormInputPhone';
+import {  MainForm } from './stories/components/forms/MainForm';
 import logo from './logo.svg';
 import './App.scss';
 
@@ -31,8 +32,10 @@ function App() {
         <Button btnStyle='black' btnSize='small'/>
         <Button showIcon={true} iconName='arrow-up'/>
         <Button showIcon={true} btnRounded={true} iconName='arrow'/>
-        <hr/>
-        <ContactForm/>
+        <hr style={{width: "100%"}}/>
+        <FormInputPhone inputPhoneValue=""/>
+        <hr style={{width: "100%"}}/>
+        <MainForm/>
 
       </header>
     </div>
