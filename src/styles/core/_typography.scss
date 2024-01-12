@@ -15,4 +15,8 @@ body {
   &--small {
     @include font(rem(14px), rem(18px));
   }
+  &--invalid {
+    @include font(rem(12px), rem(14px));
+    font-weight: 600;
+  }
 }

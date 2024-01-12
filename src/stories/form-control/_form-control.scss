@@ -1,17 +1,10 @@
 @import "../../styles/core/core.scss";
 
-// Style for FORM element
-.form {
-  &__question {
-    display: grid;
-    gap: rem(15px);
-    @include minmaxwidht(rem(240px), 100%, 880px);
-  }
-}
-
-// Style for FORM elements like input & etc
+// Style for FORM group elements, input & etc
 .form__group {
   @include flex(flex-start, flex-start);
+  flex-wrap: wrap;
+  position: relative;
   &--item {
     height: rem(60px);
     @include font(rem(16px), normal);
@@ -20,6 +13,7 @@
     border-radius: 8px;
     border: var(--form-inputs-border);
     color: var(--main-color);
+    width: 100%;
   }
 }
 
@@ -44,17 +38,6 @@
   }
 }
 
-// Style for buttons
-.form__button {
-  margin-top: 15px;
-}
-
-// Styles for Form Note
-.form__note {
-  margin-top: 30px;
-  @include minmaxwidht(rem(240px), 100%, 300px);
-}
-
 // Style if form has errors
 .form__group--error {
   .form__group {
@@ -63,6 +46,9 @@
     }
     &--error-text {
       color: var(--error);
+      position: absolute;
+      bottom: -15px;
+      left: 20px;
     }
   }
 }

@@ -1,6 +1,4 @@
-import { useState} from 'react';
-
-import '../form.scss';
+import '../_form-control.scss';
 
 interface FormInputProps {
   /**
@@ -16,15 +14,21 @@ interface FormInputProps {
   */
   inputType?: 'text' | 'email' | 'number',
   /**
-  * Input Error object:
+  * Input Error any:
   */
-  inputError?: Object,
+  inputError?: any,
+  /**
+   * register for React-Hook-Form
+   */
+  register?: any,
 }
 
 export const FormInput = ({
   inputLabel = '',
   inputPlaceholder = '',
   inputType = 'text',
+  inputError,
+  register,
   ...props
 }: FormInputProps) => {
 
@@ -39,13 +43,21 @@ export const FormInput = ({
     }
   }
 
+  const errorClass = inputError ? 'form__group--error' : '';
+
   return (
-    <div className="form__group">
+    <div className={["form__group", errorClass ].join(' ')}>
       {inputLabel !== "" && (
         <label className="form__label">{inputLabel}</label>
       )}
       <input type={inputType} className="form__group--item form__input" 
-        placeholder={placeholderState(inputType, inputPlaceholder)} {...props}/>
+        placeholder={placeholderState(inputType, inputPlaceholder)} {...register} {...props} />
+        {inputError && (
+            <div className='form__group--error-text txt--invalid'>
+              { inputError }
+            </div>
+          )
+        }
     </div>
   );
 };
