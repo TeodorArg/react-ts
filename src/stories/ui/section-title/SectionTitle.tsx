@@ -13,16 +13,19 @@ interface SectionTitleProps {
 
 export const SectionTitle = ({
     firstPtTitle = "First Part of Tite",
-    secondPtTitle = "Second Part of Title"
+    secondPtTitle = ""
   }: SectionTitleProps) => {
+
+    const twoLines = (secondPtTitle !=='') ? 'section__title--wrap' : '';
+
     return (
-      <div className='section__title'>
+      <div className={['section__title', twoLines].join(' ')}>
         <span>
           {firstPtTitle}
         </span>
         {secondPtTitle && (
-          <span>
-            {secondPtTitle}
+          <span className='section__title--yellow'>
+             {secondPtTitle}
           </span>
         )}
       </div>
