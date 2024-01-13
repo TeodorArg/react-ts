@@ -1,6 +1,5 @@
 body {
   @include font(rem(16px), rem(18px));
-  font-family: Biryani;
   font-weight: 400;
   color: var(--main-color);
 }
