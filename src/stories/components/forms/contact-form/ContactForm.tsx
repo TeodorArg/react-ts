@@ -1,5 +1,5 @@
 import { MainForm } from '../MainForm';
-import { SectionTitle } from "../../../ui/section-title/SectionTitle";
+import { Title } from "../../../ui/title/Title";
 
 interface ContactFormProps {
   /**
@@ -13,7 +13,7 @@ export const ContactForm = ({
   }: ContactFormProps) => {
     return (
       <div>
-        <SectionTitle firstPtTitle='НЕ НАШЛИ ПОДХОДЯЩИЙ' secondPtTitle='ПРОЕКТ?'/>
+        <Title firstPtTitle='НЕ НАШЛИ ПОДХОДЯЩИЙ' secondPtTitle='ПРОЕКТ?'/>
         <MainForm formBtnLabel={contacFormBtnLabel}/>
       </div>
     );

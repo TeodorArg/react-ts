@@ -1,0 +1,40 @@
+@import "../../../styles/core/core.scss";
+
+.title {
+  @include flex(center, flex-start);
+  font-weight: 700;
+  &--section {
+    text-transform: uppercase;
+    @include font(rem(16px), rem(28px));
+    @include media("min", "lg") {
+      @include font(rem(20px), rem(35px));
+    }
+    @include media("min", "xxl") {
+      @include font(rem(24px), rem(42px));
+    }
+  }
+  &--box {
+    @include font(rem(20px), rem(28px));
+    @include media("min", "xxl") {
+      @include font(rem(24px), rem(28px));
+    }
+  }
+  &--block {
+    @include font(rem(20px), rem(24px));
+    @include media("min", "lg") {
+      @include font(rem(24px), rem(32px));
+    }
+    @include media("min", "xxl") {
+      @include font(rem(32px), rem(42px));
+    }
+  }
+
+  &--yellow {
+    color: var(--yellow-dark);
+  }
+  &--wrap {
+    display: grid;
+    column-gap: 1em;
+    justify-items: start;
+  }
+}
