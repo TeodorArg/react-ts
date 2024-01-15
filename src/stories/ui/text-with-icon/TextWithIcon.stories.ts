@@ -1,15 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { TextWithIcon } from "./TextWithIcon";
-import Fileicons from "../../assets/sprites/fileicons.md";
-
-function listOfIconsName(iconListFile: any) {
-  const file = iconListFile
-    .replace(/\n/g, "")
-    .replace(/^\s+|\s+$/g, "")
-    .replace(/[,]$/g, "")
-    .split(",");
-  return file;
-}
+import listOfIconsName from "../../helpers/listOfIconsName";
 
 const meta = {
   title: "UI/Text with Icon",
@@ -23,7 +14,7 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     iconName: {
-      options: listOfIconsName(Fileicons),
+      options: listOfIconsName(),
       control: { type: "radio" },
     },
   },
