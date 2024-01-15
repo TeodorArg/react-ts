@@ -31,3 +31,13 @@ export const GeoDemo: Story = {
     iconName: "map-marker",
   },
 };
+
+export const PhoneWithIcon: Story = {
+  args: {
+    viewInMobile: false,
+    isItPhone: true,
+    textInblock: "+7 (981) 777-00-76",
+    phoneNumber: "+79817770076",
+    iconName: "phone",
+  },
+};

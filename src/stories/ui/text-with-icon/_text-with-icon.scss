@@ -12,4 +12,14 @@
   &--icon {
     width: rem(24px);
   }
+  &--text {
+    &.phone--link {
+      text-decoration: none;
+      color: var(--white);
+      @include transition;
+      &:hover {
+        color: var(--yellow-Hover);
+      }
+    }
+  }
 }
