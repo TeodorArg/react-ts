@@ -62,15 +62,16 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.7",
-    "@storybook/addon-interactions": "^7.6.7",
-    "@storybook/addon-links": "^7.6.7",
+    "@storybook/addon-essentials": "^7.6.8",
+    "@storybook/addon-interactions": "^7.6.8",
+    "@storybook/addon-links": "^7.6.8",
+    "@storybook/addon-mdx-gfm": "^7.6.8",
     "@storybook/addon-onboarding": "^1.0.10",
-    "@storybook/blocks": "^7.6.7",
-    "@storybook/preset-create-react-app": "^7.6.7",
-    "@storybook/react": "^7.6.7",
-    "@storybook/react-webpack5": "^7.6.7",
-    "@storybook/test": "^7.6.7",
+    "@storybook/blocks": "^7.6.8",
+    "@storybook/preset-create-react-app": "^7.6.8",
+    "@storybook/react": "^7.6.8",
+    "@storybook/react-webpack5": "^7.6.8",
+    "@storybook/test": "^7.6.8",
     "del": "^7.1.0",
     "eslint-plugin-storybook": "^0.6.15",
     "gulp": "^4.0.2",
@@ -81,7 +82,7 @@
     "gulp-webp": "^5.0.0",
     "imagemin-webp": "^8.0.0",
     "prop-types": "^15.8.1",
-    "storybook": "^7.6.7",
+    "storybook": "^7.6.8",
     "webpack": "^5.89.0"
   },
   "husky": {
