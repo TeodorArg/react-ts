@@ -1,0 +1,15 @@
+@import "../../../styles/core/core.scss";
+.text__icon {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, auto));
+  justify-content: start;
+  align-items: center;
+  @include font(rem(16px), rem(24px));
+  font-weight: 600;
+  color: var(--white);
+  height: rem(24px);
+  gap: rem(8px);
+  &--icon {
+    width: rem(24px);
+  }
+}

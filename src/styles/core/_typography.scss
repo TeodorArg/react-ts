@@ -2,6 +2,10 @@ body {
   @include font(rem(16px), rem(18px));
   font-weight: 400;
   color: var(--main-color);
+  background-color: var(--main-bg);
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 // Style for texts
