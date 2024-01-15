@@ -1,5 +1,5 @@
 import { Icon } from '../icon/Icon';
-import './button.scss';
+import './_button.scss';
 
 interface ButtonProps {
   /**
@@ -35,6 +35,10 @@ interface ButtonProps {
   */
   iconName?: string,
   /**
+    * Button type submit
+  */
+  btnSubmit?: boolean,
+  /**
     * Optional click handler
   */
   onClick?: () => void;
@@ -52,6 +56,7 @@ export const Button = ({
   btnFull = false,
   btnThinkBorder = false,
   btnRounded = false,
+  btnSubmit = false,
   ...props
 }: ButtonProps) => {
   const style = (btnStyle === '') ? 'btn--border' : `btn--${btnStyle}`;
@@ -61,7 +66,7 @@ export const Button = ({
   const rounded = btnRounded ? 'btn--rounded' : '';
   return (
     <button
-      type="button"
+      type={btnSubmit ? "submit" : "button"}
       className={['btn-house', `btn--${btnSize}`, border, width, style, hasIcon, rounded].join(' ')}
       {...props}
     >

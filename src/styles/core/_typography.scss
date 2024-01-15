@@ -1,8 +1,11 @@
 body {
   @include font(rem(16px), rem(18px));
-  font-family: Biryani;
   font-weight: 400;
   color: var(--main-color);
+  background-color: var(--main-bg);
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 // Style for texts
@@ -14,5 +17,9 @@ body {
   }
   &--small {
     @include font(rem(14px), rem(18px));
+  }
+  &--invalid {
+    @include font(rem(12px), rem(14px));
+    font-weight: 600;
   }
 }

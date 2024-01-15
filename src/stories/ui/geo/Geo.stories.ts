@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { FormInputPhone } from "./FormInputPhone";
+import { Geo } from "./Geo";
 
 const meta = {
-  title: "Form/InputPhone",
-  component: FormInputPhone,
+  title: "UI/Geo",
+  component: Geo,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
@@ -13,16 +12,14 @@ const meta = {
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {},
-} satisfies Meta<typeof FormInputPhone>;
+} satisfies Meta<typeof Geo>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const InputPhone: Story = {
+export const GeoDemo: Story = {
   args: {
-    inputLabel: "",
-    inputPhoneMask: "+7 (###) ###-##-##",
-    inputPhoneValue: "9999999999",
+    geoInFooter: false,
+    geoText: "Санкт-Петербург",
   },
 };

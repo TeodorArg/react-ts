@@ -12,7 +12,7 @@
     @include flex();
     @include font(rem(14px), 1);
     white-space: nowrap;
-    color: var(--main, #0a0a0a);
+    color: var(--main);
     @include media("min", "md") {
       @include font(rem(16px), 1);
     }
@@ -23,41 +23,41 @@
     }
   }
   &--yellow {
-    background: var(--yellow, #fbda94);
+    background: var(--yellow);
     &:hover,
     &:focus {
-      background: var(--yellowHover, #ab8a44);
+      background: var(--yellowHover);
     }
   }
   &--black {
-    border: 1px solid var(--main, #0a0a0a);
-    background: var(--main, #0a0a0a);
-    color: var(--white, #ffffff);
+    border: 1px solid var(--main);
+    background: var(--main);
+    color: var(--white);
     &:hover,
     &:focus {
-      background: var(--white, #ffffff);
-      color: var(--main, #0a0a0a);
+      background: var(--white);
+      color: var(--main);
     }
     &.btn--small {
       font-weight: 600;
     }
   }
   &--border {
-    border: 2px solid var(--yellow, #fbda94);
-    background: var(--white, #ffffff);
+    border: 2px solid var(--yellow);
+    background: var(--white);
     &:hover,
     &:focus {
-      border-color: var(--yellowHover, #ab8a44);
+      border-color: var(--yellowHover);
     }
     &--think {
-      border: 1px solid var(--main, #0a0a0a);
+      border: 1px solid var(--main);
       font-weight: 400;
-      background: var(--white, #ffffff);
-      color: var(--main, #0a0a0a);
+      background: var(--white);
+      color: var(--main);
       &:hover,
       &:focus {
-        background: var(--main, #0a0a0a);
-        color: var(--white, #ffffff);
+        background: var(--main);
+        color: var(--white);
       }
     }
   }

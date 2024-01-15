@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Icon } from "./Icon";
+import { TextWithIcon } from "./TextWithIcon";
 import listOfIconsName from "../../helpers/listOfIconsName";
 
 const meta = {
-  title: "UI/Icons",
-  component: Icon,
+  title: "UI/Text with Icon",
+  component: TextWithIcon,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
@@ -18,14 +18,26 @@ const meta = {
       control: { type: "radio" },
     },
   },
-} satisfies Meta<typeof Icon>;
+} satisfies Meta<typeof TextWithIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const IconArrow: Story = {
+export const GeoDemo: Story = {
   args: {
-    iconName: "arrow",
-    iconColor: "#1cf128",
+    viewInMobile: false,
+    isItPhone: false,
+    textInblock: "Санкт-Петербург",
+    iconName: "map-marker",
+  },
+};
+
+export const PhoneWithIcon: Story = {
+  args: {
+    viewInMobile: false,
+    isItPhone: true,
+    textInblock: "+7 (981) 777-00-76",
+    phoneNumber: "+79817770076",
+    iconName: "phone",
   },
 };

@@ -21,6 +21,10 @@ interface IconProps {
    *--icon-third-color
    */
   iconThirdColor?: string;
+  /**
+   * Custom ClassName for Icon
+   */
+  iconClassName?: string;
 }
 
 const SVG = styled('svg')`
@@ -36,10 +40,11 @@ const SVG = styled('svg')`
  */
 export const Icon = ({
   iconName = 'arrow',
+  iconClassName = '',
   ...props
 }: IconProps) => {
   return (
-    <SVG className="icon" {...props}>
+    <SVG className={["icon", iconClassName].join(' ')}>
         <use href={`${Icons}#${iconName}`}></use>
     </SVG>
   );
