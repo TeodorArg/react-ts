@@ -6,7 +6,7 @@ interface TextWithIconProps {
   viewInMobile?: boolean;
   isItPhone?: boolean;
   iconName?: string;
-  textInblock?: string;
+  textInblock?: any | null;
   phoneNumber?: string;
 }
 
