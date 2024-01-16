@@ -38,6 +38,15 @@ export const Black: Story = {
 export const Border: Story = {
   args: {
     btnLabel: "Button",
+    btnStyle: "",
+  },
+};
+
+export const BorderThink: Story = {
+  args: {
+    btnLabel: "Button",
+    btnStyle: "",
+    btnThinkBorder: true,
   },
 };
 
@@ -55,5 +64,14 @@ export const Rounder: Story = {
     btnRounded: true,
     showIcon: true,
     iconName: "arrow",
+  },
+};
+
+export const Action: Story = {
+  args: {
+    btnStyle: "action",
+    btnRounded: false,
+    showIcon: true,
+    iconName: "burger",
   },
 };

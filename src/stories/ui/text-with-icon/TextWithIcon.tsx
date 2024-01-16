@@ -10,6 +10,10 @@ interface TextWithIconProps {
   phoneNumber?: string;
 }
 
+/**
+ * Button UI component for user interaction
+ */
+
 export const TextWithIcon = ({
   viewInMobile = false,
   isItPhone = false,
