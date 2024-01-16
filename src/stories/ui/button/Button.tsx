@@ -5,7 +5,7 @@ interface ButtonProps {
   /**
     * What is background of button?
   */
-  btnStyle?: '' | 'yellow' | 'black';
+  btnStyle?: '' | 'yellow' | 'black' | 'action';
   /**
     * Width of button full or not
   */
@@ -48,7 +48,7 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({
-  btnLabel = 'Button',
+  btnLabel = '',
   btnStyle = 'yellow',
   btnSize = 'medium',
   showIcon = false,
@@ -63,14 +63,15 @@ export const Button = ({
   const width = btnFull ? 'btn--full' : '';
   const border = btnThinkBorder ? 'btn--border--think' : '';
   const hasIcon = showIcon ? 'btn--icon' : '';
+  const hasLabel = (btnLabel !== '') ? 'btn--label' : '';
   const rounded = btnRounded ? 'btn--rounded' : '';
   return (
     <button
       type={btnSubmit ? "submit" : "button"}
-      className={['btn-house', `btn--${btnSize}`, border, width, style, hasIcon, rounded].join(' ')}
+      className={['btn-house', `btn--${btnSize}`, border, width, style, hasIcon, hasLabel, rounded].join(' ')}
       {...props}
     >
-      {!btnRounded && (
+      {(!btnRounded && btnStyle !== 'action') && (
           <span>{btnLabel}</span>
         )
       }
