@@ -45,7 +45,7 @@ interface ButtonProps {
 }
 
 /**
- * Primary UI component for user interaction
+ * Button UI component for user interaction
  */
 export const Button = ({
   btnLabel = '',

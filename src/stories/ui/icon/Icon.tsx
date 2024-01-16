@@ -25,6 +25,10 @@ interface IconProps {
    * Custom ClassName for Icon
    */
   iconClassName?: string;
+   /**
+   * Custom Styles for Icon
+   */
+   iconStyle?: object | undefined;
 }
 
 const SVG = styled('svg')`
@@ -36,15 +40,16 @@ const SVG = styled('svg')`
 `
 
 /**
- * Primary UI component for user interaction
+ * Icon UI component for user interaction
  */
 export const Icon = ({
   iconName = 'arrow',
   iconClassName = '',
+  iconStyle,
   ...props
 }: IconProps) => {
   return (
-    <SVG className={["icon", iconClassName].join(' ')}>
+    <SVG className={["icon", iconClassName].join(' ')} {...props} style={iconStyle}>
         <use href={`${Icons}#${iconName}`}></use>
     </SVG>
   );
