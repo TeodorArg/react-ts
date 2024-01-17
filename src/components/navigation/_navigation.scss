@@ -15,25 +15,86 @@
     grid-template-rows: rem(80px) rem(81px);
     justify-content: stretch;
     align-items: stretch;
+    grid-template-columns: repeat(2, minmax(max-content, 1fr)) max-content;
+  }
+  @include media("min", "lgBig") {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
-// Logo
+// Logo block
 .navigation__logo {
   @include flex(center, center);
   @include media("min", "lgBig") {
-    grid-row: span 2 / span 2;
+    grid-row: 1 / span 2;
   }
 }
 
 // Geo Block
 .navigation__geo {
   display: none;
-  padding: 0 20px;
+  padding: 0 36px;
+  border-style: solid;
+  border-color: var(--border-nav-color);
   @include media("min", "md") {
     @include flex();
-    border-style: none solid;
+    padding: 0 20px;
     border-width: 0 1px;
+  }
+}
+
+// Phone block
+.navigation__phone {
+  @include flex();
+  border-style: solid;
+  border-color: var(--border-nav-color);
+  @include media("min", "md") {
+    padding: 0 20px;
+  }
+  @include media("min", "lgBig") {
+    border-right-width: 1px;
+  }
+}
+
+// Social block
+.navigation__social {
+  display: none;
+  @include media("min", "lgBig") {
+    @include flex();
+  }
+}
+
+// Main menu block
+.navigation__menu {
+  display: none;
+  border-style: solid;
+  border-color: var(--border-nav-color);
+  grid-column: 1 / span 2;
+  align-self: stretch;
+  @include media("min", "md") {
+    display: flex;
+    border-top-width: 1px;
+    background-color: var(--white);
+  }
+  @include media("min", "lgBig") {
+    grid-column: 2 / span 2;
+  }
+}
+
+// Contact block
+.navigation__contacts {
+  display: none;
+  border-style: solid;
+  border-color: var(--border-nav-color);
+  @include media("min", "md") {
+    @include flex();
+    border-top-width: 1px;
+  }
+}
+
+// Button for Mobile Menu
+.navigation__burger {
+  @include media("min", "md") {
+    display: none;
   }
 }

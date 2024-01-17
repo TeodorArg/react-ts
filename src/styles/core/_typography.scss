@@ -22,4 +22,22 @@ body {
     @include font(rem(12px), rem(14px));
     font-weight: 600;
   }
+  &--uppercase {
+    text-transform: uppercase;
+  }
+  &--bold {
+    font-weight: 700;
+  }
+  &--menu {
+    @include font(rem(20px), rem(20px));
+    @include media("min", "md") {
+      @include font(rem(15px), rem(26px));
+    }
+    @include media("min", "lgBig") {
+      @include font(rem(13px), rem(18px));
+    }
+    @include media("min", "xl") {
+      @include font(rem(16px), rem(26px));
+    }
+  }
 }
