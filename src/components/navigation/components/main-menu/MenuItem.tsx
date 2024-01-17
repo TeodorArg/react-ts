@@ -10,7 +10,6 @@ export const MenuItem = ({
     itemName = '',
     itemRouter = '',
     singlLink = false,
-    ...props
   }: MenuItemProps) => {
     return (
      <>

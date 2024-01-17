@@ -22,11 +22,10 @@ export const TextWithIcon = ({
   textInblock = 'textInblock',
   iconName = 'phone',
   phoneNumber = '',
-  ...props
 }: TextWithIconProps) => {
   const loadingClass = loading ? '' : 'sceleton'
   return (
-    <div className="text__icon" {...props}>
+    <div className="text__icon">
       <Icon iconClassName="text__icon--icon" iconName={iconName}/>
       {!isItPhone && (
         <span className={["text__icon--text", loadingClass].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>

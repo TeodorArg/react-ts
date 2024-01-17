@@ -20,14 +20,13 @@ interface GeoProps {
  */
 
 export const Geo = ({
-  geoInFooter = false,
-  iconClassName = 'map-marker',
-  showOnlyCity = false,
-  defaultGeo = 'Москва',
-  cityString = '',
-  apiKey = 'b79dda1140b248bfbc95e4dbe7c2b513',
-  ...props
-}: GeoProps) => {
+    geoInFooter = false,
+    iconClassName = 'map-marker',
+    showOnlyCity = false,
+    defaultGeo = 'Москва',
+    cityString = '',
+    apiKey = 'b79dda1140b248bfbc95e4dbe7c2b513',
+  }: GeoProps) => {
 
   // GEO
   const APIkey = apiKey;
@@ -110,7 +109,7 @@ export const Geo = ({
 
   return (
    
-    <div {...props}>
+    <div>
       <TextWithIcon
         textInblock = {location ? location : cityString || null}
         iconName = {iconClassName}

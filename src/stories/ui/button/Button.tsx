@@ -62,7 +62,6 @@ export const Button = ({
   btnRounded = false,
   btnSubmit = false,
   btnCustomClass,
-  ...props
 }: ButtonProps) => {
   const style = (btnStyle === '') ? 'btn--border' : `btn--${btnStyle}`;
   const width = btnFull ? 'btn--full' : '';
@@ -83,7 +82,6 @@ export const Button = ({
         rounded,
         btnCustomClass
       ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}
-      {...props}
     >
       {(!btnRounded && btnStyle !== 'action') && (
           <span>{btnLabel}</span>

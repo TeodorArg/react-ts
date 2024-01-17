@@ -13,7 +13,6 @@ export const SocialIcon = ({
   iconName = "youtube",
   socialLink = '',
   yellowColor = false,
-  ...props
 }: SocialIconProps) => {
 
   const Link = styled.a(
@@ -42,7 +41,7 @@ export const SocialIcon = ({
   const IconStyle = {width: '24px'};
 
   return (
-    <Link className='social__link' {...props} href={socialLink}>
+    <Link className='social__link' href={socialLink}>
       {yellowColor ?
         <Icon iconName={iconName} iconColor="var(--yellow-hover)" iconSubColor="var(--white)" iconThirdColor="var(--white)" iconStyle={IconStyle}/>
       :
