@@ -49,7 +49,7 @@ export const Icon = ({
   ...props
 }: IconProps) => {
   return (
-    <SVG className={["icon", iconClassName].join(' ')} {...props} style={iconStyle}>
+    <SVG className={["icon", iconClassName].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")} {...props} style={iconStyle}>
         <use href={`${Icons}#${iconName}`}></use>
     </SVG>
   );

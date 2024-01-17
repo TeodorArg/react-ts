@@ -29,7 +29,7 @@ export const TextWithIcon = ({
     <div className="text__icon" {...props}>
       <Icon iconClassName="text__icon--icon" iconName={iconName}/>
       {!isItPhone && (
-        <span className={["text__icon--text", loadingClass].join(' ')}>
+        <span className={["text__icon--text", loadingClass].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>
           {textInblock}
         </span>
       ) }

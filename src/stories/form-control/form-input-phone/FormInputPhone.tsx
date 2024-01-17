@@ -49,7 +49,7 @@ export const FormInputPhone = ({
       )}
 
         <PatternFormat
-          className={['form__group--item phone form__input', inputPhoneClass].join(' ')} 
+          className={['form__group--item phone form__input', inputPhoneClass].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")} 
           format={inputPhoneMask}
           value={inputPhoneValue}
           allowEmptyFormatting mask="_" 
