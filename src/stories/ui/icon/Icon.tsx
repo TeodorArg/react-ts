@@ -31,22 +31,28 @@ interface IconProps {
    iconStyle?: object | undefined;
 }
 
-const SVG = styled('svg')`
-  --icon-color: ${(props: IconProps) => props.iconColor };
-  --icon-sub-color: ${(props: IconProps) => props.iconSubColor};
-  --icon-third-color: ${(props: IconProps) => props.iconThirdColor};
-  display: inline-flex;
-  height: inherit;
-`
-
 /**
  * Icon UI component for user interaction
  */
 export const Icon = ({
   iconName = 'arrow',
   iconClassName = '',
+  iconColor = '',
+  iconSubColor = '',
+  iconThirdColor = '',
   iconStyle,
 }: IconProps) => {
+  console.log(iconColor, iconSubColor, iconThirdColor)
+  const SVG = styled.svg(
+    {
+      '--icon-color': `${iconColor}`,
+      '--icon-sub-color': `${iconSubColor}`,
+      '--icon-third-color': `${iconThirdColor}`,
+      display: 'inline-flex',
+      height: 'inherit'
+    }
+  
+  )
   return (
     <SVG className={["icon", iconClassName].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")} style={iconStyle}>
         <use href={`${Icons}#${iconName}`}></use>

@@ -35,7 +35,7 @@
     "eject": "react-scripts eject",
     "faviconBuild": "gulp faviconBuild",
     "imagesBuild": "gulp imagesBuild",
-    "iconsBuild": "gulp iconsBuild & gulp iconsList",
+    "iconsBuild": "gulp iconsBuild & gulp listOfIcons",
     "developmentHtml": "gulp",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
