@@ -1,5 +1,14 @@
 // Media queries:
-$sizes: ("xs": 375px, "sm": 576px, "md": 768px, "lg": 992px, "xl": 1200px, "xxl": 1366px, "full": 1920px);
+$sizes: (
+  "xs": 375px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "lgBig": 1024px,
+  "xl": 1200px,
+  "xxl": 1366px,
+  "full": 1920px,
+);
 @function getPreviousSize($currentSize) {
   $keys: map-keys($sizes);
   $index: index($keys, $currentSize)-1;

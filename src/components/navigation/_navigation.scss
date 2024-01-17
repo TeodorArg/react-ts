@@ -1,0 +1,39 @@
+@import "../../styles/core/core.scss";
+
+.navigation {
+  width: 100%;
+  padding: 0 rem(20px);
+  border-bottom: 1px solid var(--border-nav-color);
+  display: grid;
+  grid-template-rows: 80px;
+  grid-template-columns: minmax(0, 1fr) 32px 40px;
+  column-gap: rem(20px);
+  align-items: center;
+  @include media("min", "md") {
+    padding: 0;
+    column-gap: 0;
+    grid-template-rows: rem(80px) rem(81px);
+    justify-content: stretch;
+    align-items: stretch;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+// Logo
+.navigation__logo {
+  @include flex(center, center);
+  @include media("min", "lgBig") {
+    grid-row: span 2 / span 2;
+  }
+}
+
+// Geo Block
+.navigation__geo {
+  display: none;
+  padding: 0 20px;
+  @include media("min", "md") {
+    @include flex();
+    border-style: none solid;
+    border-width: 0 1px;
+  }
+}
