@@ -18,5 +18,8 @@
     @extend .txt--menu;
     text-decoration: none;
     @include hover(var(--main-color), var(--yellow-hover));
+    &.single--link {
+      @include hover(var(--white), var(--yellow-hover));
+    }
   }
 }

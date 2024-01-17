@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import logo from '../../../assets/logo/logo.svg';
 
 interface LogoProps{
   logoSrc?: string;
@@ -9,7 +10,7 @@ const breakpoints = [768, 1440];
 const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
 export const Logo = ({
-  logoSrc = '../../../assets/logo/logo.svg',
+  logoSrc = logo,
   logoInFooter = false,
   ...props
 }: LogoProps) => {

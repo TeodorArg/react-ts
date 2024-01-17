@@ -16,15 +16,28 @@ export const SocialIcon = ({
   ...props
 }: SocialIconProps) => {
 
-  const Link = styled('a')`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid ${yellowColor ? 'var(--yellow-hover)' : 'var(--white)'};
-    width: 40px;
-    height: 40px;
-  `
+  const Link = styled.a(
+    {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      width: '40px',
+      height: '40px',
+      border: '1px solid',
+    },
+    yellowColor ? {
+      borderColor: 'var(--yellow-hover)',
+      '&:hover': {
+        borderColor: 'var(--main-color)',
+      }
+    } : {
+      borderColor: 'var(--white)',
+      '&:hover': {
+        borderColor: 'var(--yellow-hover)',
+      }
+    },
+  )
 
   const IconStyle = {width: '24px'};
 
@@ -35,7 +48,6 @@ export const SocialIcon = ({
       :
         <Icon iconName={iconName} iconColor="var(--white)" iconSubColor="var(--main-color)" iconThirdColor="var(--main-color)" iconStyle={IconStyle}/>
       }
-      
     </Link>
   );
 };

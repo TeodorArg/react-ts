@@ -21,7 +21,7 @@ export const MenuItem = ({
             </a>
           </li>
         ) : (
-          <a className="main__menu--link" href={itemRouter}>{itemName}</a>
+          <a className="main__menu--link single--link" href={itemRouter}>{itemName}</a>
         )}
      </>
 
