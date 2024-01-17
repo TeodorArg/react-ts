@@ -5,19 +5,35 @@ import {  TextWithIcon } from "../text-with-icon/TextWithIcon";
 interface GeoProps {
   geoInFooter?: boolean;
   iconClassName?: string;
+  showOnlyCity?: boolean;
+  cityString?: string;
+  defaultGeo?: string;
+  apiKey?: string;
 }
-const APIkey = "b79dda1140b248bfbc95e4dbe7c2b513";
 
+
+
+/**
+ * If you don't want to use api.opencagedata, you can put cityString, with name of City <br>
+ * if for some reason the API is not available, you can put defaultGeo, with name of City as a placeholder<br>
+ * apiKey = string with APIkey from api.opencagedata
+ */
 
 export const Geo = ({
   geoInFooter = false,
   iconClassName = 'map-marker',
+  showOnlyCity = false,
+  defaultGeo = 'Москва',
+  cityString = '',
+  apiKey = 'b79dda1140b248bfbc95e4dbe7c2b513',
   ...props
 }: GeoProps) => {
 
   // GEO
+  const APIkey = apiKey;
 
-  const [location, setLocation] = useState<string>('');
+  const [location, setLocation] = useState<string>();
+  const [loading, loadingSucsess] = useState<boolean>();
 
   const options = {
     enableHighAccuracy: true,
@@ -27,11 +43,8 @@ export const Geo = ({
 
   function success(pos:any) {
     let crd = pos.coords;
-    console.log("Your current position is:");
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`);
     getLocationInfo(crd.latitude, crd.longitude);
+
   }
 
   function errors(err:any) {
@@ -39,23 +52,38 @@ export const Geo = ({
   }
 
   function getLocationInfo(latitude:any, longitude:any) {
-    const url = `https://api.opencagedata.com/geocode/v1/json?q=${latitude},${longitude}&key=${APIkey}`;
+  
+    const url = (cityString === '') ? 
+      `https://api.opencagedata.com/geocode/v1/json?q=${latitude},${longitude}&key=${APIkey}`
+      :
+      ``;
+
+    url ?  
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         if (data.status.code === 200) {
           // console.log(data.results);
           const address = 
-            data.results[0].components.country+', '+
-            data.results[0].components.city+', '+
-            data.results[0].components.suburb+', '+
-            data.results[0].components.road 
+            !showOnlyCity ?
+              data.results[0].components.country+', '+
+              data.results[0].components.city+', '+
+              data.results[0].components.suburb+', '+
+              data.results[0].components.road 
+            :
+              data.results[0].components.city
           setLocation(address);
+          loadingSucsess(true);
         } else {
+          setLocation(cityString || defaultGeo);
+          loadingSucsess(true);
           console.log("Reverse geolocation request failed.");
         }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+    :
+    setLocation(cityString);
+    loadingSucsess(true);
   }
 
   useEffect(() => {
@@ -77,13 +105,16 @@ export const Geo = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   // GEO ./END
+
   return (
    
-    <div>
+    <div {...props}>
       <TextWithIcon
-        textInblock = {location ? location : null}
+        textInblock = {location ? location : cityString || null}
         iconName = {iconClassName}
+        loading = {loading}
       />
     </div>
 

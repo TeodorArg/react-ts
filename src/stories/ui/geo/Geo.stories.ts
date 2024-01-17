@@ -19,7 +19,21 @@ type Story = StoryObj<typeof meta>;
 
 export const GeoDemo: Story = {
   args: {
+    iconClassName: "map-marker",
+  },
+};
+
+export const GeoDemoShowOnlyCity: Story = {
+  args: {
+    iconClassName: "map-marker",
+    showOnlyCity: true,
+  },
+};
+
+export const GeoCityString: Story = {
+  args: {
     geoInFooter: false,
     iconClassName: "map-marker",
+    cityString: "Москва",
   },
 };
