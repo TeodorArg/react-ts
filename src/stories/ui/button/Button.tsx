@@ -39,6 +39,10 @@ interface ButtonProps {
   */
   btnSubmit?: boolean,
   /**
+   *  Button custon Style
+   */
+  btnCustomClass?: string,
+  /**
     * Optional click handler
   */
   onClick?: () => void;
@@ -57,6 +61,7 @@ export const Button = ({
   btnThinkBorder = false,
   btnRounded = false,
   btnSubmit = false,
+  btnCustomClass,
   ...props
 }: ButtonProps) => {
   const style = (btnStyle === '') ? 'btn--border' : `btn--${btnStyle}`;
@@ -68,7 +73,16 @@ export const Button = ({
   return (
     <button
       type={btnSubmit ? "submit" : "button"}
-      className={['btn-house', `btn--${btnSize}`, border, width, style, hasIcon, hasLabel, rounded].join(' ')}
+      className={[
+        'btn-house', `btn--${btnSize}`, 
+        border,
+        width,
+        style,
+        hasIcon,
+        hasLabel,
+        rounded,
+        btnCustomClass
+      ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}
       {...props}
     >
       {(!btnRounded && btnStyle !== 'action') && (

@@ -18,7 +18,7 @@ interface TextWithIconProps {
 export const TextWithIcon = ({
   viewInMobile = false,
   isItPhone = false,
-  loading = false,
+  loading = true,
   textInblock = 'textInblock',
   iconName = 'phone',
   phoneNumber = '',
