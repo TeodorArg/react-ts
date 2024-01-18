@@ -25,16 +25,19 @@ export const TextWithIcon = ({
 }: TextWithIconProps) => {
   const loadingClass = loading ? '' : 'sceleton'
   return (
-    <div className="text__icon">
-      <Icon iconClassName="text__icon--icon" iconName={iconName}/>
+    <div className={["text__icon", isItPhone ? ' phone': ''].join('')}>
       {!isItPhone && (
-        <span className={["text__icon--text", loadingClass].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>
-          {textInblock}
-        </span>
+        <>
+          <Icon iconClassName="text__icon--icon" iconName={iconName}/>
+          <span className={["text__icon--text", loadingClass].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>
+            {textInblock}
+          </span>
+        </>
       ) }
       {isItPhone && (
-        <a className="text__icon--text phone--link" href={"tel:" + phoneNumber}>
-          {textInblock}
+        <a className="text__icon" href={"tel:" + phoneNumber}>
+          <Icon iconClassName="text__icon--icon" iconName={iconName}/>
+          <span className="text__icon--phone">{textInblock}</span>
         </a>
       ) }
      
