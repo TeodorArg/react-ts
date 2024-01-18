@@ -62,6 +62,7 @@ export const Button = ({
   btnRounded = false,
   btnSubmit = false,
   btnCustomClass,
+  onClick,
 }: ButtonProps) => {
   const style = (btnStyle === '') ? 'btn--border' : `btn--${btnStyle}`;
   const width = btnFull ? 'btn--full' : '';
@@ -72,6 +73,7 @@ export const Button = ({
   return (
     <button
       type={btnSubmit ? "submit" : "button"}
+      onClick={onClick}
       className={[
         'btn-house', `btn--${btnSize}`, 
         border,
