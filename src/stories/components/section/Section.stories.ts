@@ -20,6 +20,5 @@ type Story = StoryObj<typeof meta>;
 export const SectionFullScreenImage: Story = {
   args: {
     sectionFullScreen: true,
-    sectionImageAlt: "SectionFullScreenImage",
   },
 };
