@@ -3,7 +3,7 @@ import "../../../styles/core/_colors.scss";
 import  { Icon } from "../../ui/icon/Icon";
 
 interface SocialIconProps {
-  iconName?: 'youtube' | 'vk' | 'telegram' | 'inst';
+  iconName?: string;
   socialLink?: string;
   yellowColor?: boolean;
 }
@@ -15,6 +15,7 @@ export const SocialIcon = ({
   yellowColor = false,
 }: SocialIconProps) => {
 
+  console.log(typeof iconName);
   const Link = styled.a(
     {
       display: 'flex',
@@ -24,16 +25,33 @@ export const SocialIcon = ({
       width: '40px',
       height: '40px',
       border: '1px solid',
+      transition: 'all .25s linear'
     },
     yellowColor ? {
       borderColor: 'var(--yellow-hover)',
+      '.icon' : {
+        '--icon-color': 'var(--yellow-hover)',
+        '--icon-sub-color': 'var(--white)',
+        '--icon-third-color': 'var(--white)'
+      },
       '&:hover': {
         borderColor: 'var(--main-color)',
+        '.icon' : {
+          '--icon-color': 'var(--main-color)',
+        }
       }
     } : {
       borderColor: 'var(--white)',
+      '.icon' : {
+        '--icon-color': 'var(--white)',
+        '--icon-sub-color': 'var(--main-color)',
+        '--icon-third-color': 'var(--main-color)'
+      },
       '&:hover': {
         borderColor: 'var(--yellow-hover)',
+        '.icon' : {
+          '--icon-color': 'var(--yellow-hover)',
+        }
       }
     },
   )
@@ -43,9 +61,9 @@ export const SocialIcon = ({
   return (
     <Link className='social__link' href={socialLink}>
       {yellowColor ?
-        <Icon iconName={iconName} iconColor="var(--yellow-hover)" iconSubColor="var(--white)" iconThirdColor="var(--white)" iconStyle={IconStyle}/>
+        <Icon iconName={iconName} iconStyle={IconStyle}/>
       :
-        <Icon iconName={iconName} iconColor="var(--white)" iconSubColor="var(--main-color)" iconThirdColor="var(--main-color)" iconStyle={IconStyle}/>
+        <Icon iconName={iconName} iconStyle={IconStyle}/>
       }
     </Link>
   );

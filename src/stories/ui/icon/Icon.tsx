@@ -42,7 +42,6 @@ export const Icon = ({
   iconThirdColor = '',
   iconStyle,
 }: IconProps) => {
-  console.log(iconColor, iconSubColor, iconThirdColor)
   const SVG = styled.svg(
     {
       '--icon-color': `${iconColor}`,
