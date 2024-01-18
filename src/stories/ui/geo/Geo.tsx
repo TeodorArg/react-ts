@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {  TextWithIcon } from "../text-with-icon/TextWithIcon";
 
 interface GeoProps {
-  geoInFooter?: boolean;
+  geoInMobile?: boolean;
   iconClassName?: string;
   showOnlyCity?: boolean;
   cityString?: string;
@@ -20,7 +20,7 @@ interface GeoProps {
  */
 
 export const Geo = ({
-    geoInFooter = false,
+    geoInMobile = false,
     iconClassName = 'map-marker',
     showOnlyCity = false,
     defaultGeo = 'Москва',
@@ -32,7 +32,7 @@ export const Geo = ({
   const APIkey = apiKey;
 
   const [location, setLocation] = useState<string>();
-  const [loading, loadingSucsess] = useState<boolean>();
+  const [loading, loadingSucsess] = useState<boolean>(true);
 
   const options = {
     enableHighAccuracy: true,
@@ -50,12 +50,13 @@ export const Geo = ({
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
 
+
   function getLocationInfo(latitude:any, longitude:any) {
   
     const url = (cityString === '') ? 
       `https://api.opencagedata.com/geocode/v1/json?q=${latitude},${longitude}&key=${APIkey}`
       :
-      ``;
+      null;
 
     url ?  
     fetch(url)
@@ -72,17 +73,16 @@ export const Geo = ({
             :
               data.results[0].components.city
           setLocation(address);
-          loadingSucsess(true);
+          loadingSucsess(false);
         } else {
           setLocation(cityString || defaultGeo);
-          loadingSucsess(true);
+          loadingSucsess(false);
           console.log("Reverse geolocation request failed.");
         }
       })
       .catch((error) => console.error(error))
     :
     setLocation(cityString);
-    loadingSucsess(true);
   }
 
   useEffect(() => {
@@ -106,14 +106,14 @@ export const Geo = ({
   }, []);
 
   // GEO ./END
-
   return (
-   
+
     <div>
       <TextWithIcon
         textInblock = {location ? location : cityString || null}
         iconName = {iconClassName}
         loading = {loading}
+        viewInMobile={geoInMobile}
       />
     </div>
 

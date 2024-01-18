@@ -23,9 +23,9 @@ export const TextWithIcon = ({
   iconName = 'phone',
   phoneNumber = '',
 }: TextWithIconProps) => {
-  const loadingClass = loading ? '' : 'sceleton'
+  const loadingClass = loading ? 'sceleton' : '';
   return (
-    <div className={["text__icon", isItPhone ? ' phone': ''].join('')}>
+    <div className={["text__icon", isItPhone ? 'phone': null, viewInMobile ? 'mobile' : null].join(' ')}>
       {!isItPhone && (
         <>
           <Icon iconClassName="text__icon--icon" iconName={iconName}/>
@@ -37,7 +37,7 @@ export const TextWithIcon = ({
       {isItPhone && (
         <a className="text__icon" href={"tel:" + phoneNumber}>
           <Icon iconClassName="text__icon--icon" iconName={iconName}/>
-          <span className="text__icon--phone">{textInblock}</span>
+          <span className={["text__icon--phone", viewInMobile ? 'mobile' : null].join(' ')}>{textInblock}</span>
         </a>
       ) }
      

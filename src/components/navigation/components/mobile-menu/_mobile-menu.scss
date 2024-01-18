@@ -1,5 +1,21 @@
 @import "../../../../styles/core/core.scss";
 .mobile__menu {
+  @include flex(flex-start, flex-start);
+  @include transition;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  height: max-content;
+  z-index: -1;
+  transform: scaleY(0);
+  padding: 30px 20px;
+  transform-origin: top;
+  &.opened {
+    transform: scaleY(1);
+  }
   @include media("min", "md") {
     display: none;
   }

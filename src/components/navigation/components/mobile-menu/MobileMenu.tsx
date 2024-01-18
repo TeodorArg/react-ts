@@ -4,16 +4,23 @@ import MainMenu from "../main-menu/MainMenu";
 import SocialList from "../social-list/SocialList";
 import "./_mobile-menu.scss";
 
-const MobileMenu = () => {
+interface MobileMenuProps {
+  openMenu?: boolean;
+};
+const MobileMenu = ({openMenu = false}:MobileMenuProps) => {
+
+  const showMenuClass = openMenu ? 'opened' : null;
+
   return (
-    <div className="mobile__menu">
-      <MainMenu/>
-      <Geo showOnlyCity={true}/>
+    <div className={["mobile__menu", showMenuClass].join(' ')}>
+      <MainMenu mobileView={true}/>
+      <Geo showOnlyCity={true} geoInMobile={true}/>
       <TextWithIcon
           iconName="phone"
           isItPhone
           phoneNumber="+79817770076"
           textInblock="+7 (981) 777-00-76"
+          viewInMobile={true}
         />
       <SocialList showInMobile={true}/>
     </div>

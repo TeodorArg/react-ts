@@ -32,7 +32,7 @@ export const GeoDemoShowOnlyCity: Story = {
 
 export const GeoCityString: Story = {
   args: {
-    geoInFooter: false,
+    geoInMobile: false,
     iconClassName: "map-marker",
     cityString: "Москва",
   },

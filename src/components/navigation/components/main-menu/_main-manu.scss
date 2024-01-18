@@ -1,14 +1,19 @@
 @import "../../../../styles/core/core.scss";
 
 .main__menu {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, max-content));
-  column-gap: 12px;
-  padding: 0 12px;
+  &:not(.mobile) {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, max-content));
+    column-gap: 12px;
+    justify-content: center;
+    align-content: center;
+  }
+  padding: 0px;
   height: 100%;
-  justify-content: center;
-  align-content: center;
   width: 100%;
+  @include media("min", "xl") {
+    padding: 0 12px;
+  }
   @include media("min", "xxl") {
     padding: 0 16px;
     column-gap: 16px;
@@ -20,5 +25,8 @@
   @include media("min", "2xxl") {
     max-width: 996px;
     column-gap: 40px;
+  }
+  &.mobile {
+    margin-bottom: 80px;
   }
 }

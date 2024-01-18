@@ -9,6 +9,13 @@
   color: var(--white);
   height: rem(24px);
   gap: rem(8px);
+  &.mobile {
+    color: var(--main-color);
+    --icon-color: var(--yellow-hover);
+    --icon-sub-color: var(--white);
+    --icon-third-color: var(--yellow-hover);
+    @include font(rem(20px), rem(26px));
+  }
   &.phone {
     grid-template-columns: 1fr;
     height: auto;
@@ -16,6 +23,21 @@
       text-decoration: none;
       color: var(--white);
       @include transition;
+    }
+    .text__icon--icon {
+      width: rem(32px);
+      @include media("min", "md") {
+        width: rem(24px);
+      }
+    }
+    &.mobile {
+      margin: 30px 0;
+      .text__icon,
+      .text__icon--icon {
+        color: var(--main-color);
+        --icon-color: var(--yellow-hover);
+        @include font(rem(20px), rem(26px));
+      }
     }
     &:hover {
       .text__icon {
@@ -30,12 +52,18 @@
     }
   }
   &--icon {
-    width: rem(24px);
+    width: rem(32px);
+    height: rem(32px);
+    @include media("min", "md") {
+      width: rem(24px);
+    }
   }
   &--phone {
-    display: none;
-    @include media("min", "md") {
-      display: inline;
+    &:not(.mobile) {
+      display: none;
+      @include media("min", "md") {
+        display: inline;
+      }
     }
   }
 }

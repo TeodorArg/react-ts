@@ -15,7 +15,6 @@ export const SocialIcon = ({
   yellowColor = false,
 }: SocialIconProps) => {
 
-  console.log(typeof iconName);
   const Link = styled.a(
     {
       display: 'flex',

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useWindowSize } from "@react-hook/window-size/throttled";
 
 import { Logo } from "../../stories/ui/logo/Logo";
 import { Geo } from "../../stories/ui/geo/Geo";
@@ -19,9 +20,13 @@ interface NavigationProps {
   showInFooter?: boolean;
 };
 
+
+
 const Navigation = ({
   showInFooter = false,
 }: NavigationProps) => {
+
+  const [width] = useWindowSize({ fps: 60 });
 
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
 
@@ -30,25 +35,33 @@ const Navigation = ({
     setOpenMobileMenu(!openMobileMenu);
   }
 
+  const mobileview = width < 768;
+
   return (
     <>
-    <div className="navigation">
+    <div className={["navigation", openMobileMenu ? 'dark' : null].join(" ")}>
 
       <div className="navigation__logo">
         <Logo logoSrc={logo}/>
       </div>
 
       <div className="navigation__geo">
-        <Geo showOnlyCity={true}/>
+        { !mobileview && (
+            <Geo showOnlyCity={true}/>
+          ) 
+        }
       </div>
 
       <div className="navigation__phone">
-        <TextWithIcon
-          iconName="phone"
-          isItPhone
-          phoneNumber="+79817770076"
-          textInblock="+7 (981) 777-00-76"
-        />
+        {!openMobileMenu && (
+          <TextWithIcon
+            iconName="phone"
+            isItPhone
+            phoneNumber="+79817770076"
+            textInblock="+7 (981) 777-00-76"
+          />
+        )}
+        
       </div>
 
       <SocialList/>
@@ -61,17 +74,20 @@ const Navigation = ({
         <MenuItem itemName="Контакты" singlLink={true}/>
       </div>
 
-      <Button
-        btnCustomClass="navigation__burger"
-        btnStyle="action"
-        iconName="burger"
-        showIcon={true}
-        onClick={toggleMobileMenu}
-      />
+      { mobileview && (
+          <Button
+            btnCustomClass="navigation__burger"
+            btnStyle="action"
+            iconName={openMobileMenu ? 'close' : 'burger'}
+            showIcon={true}
+            onClick={toggleMobileMenu}
+          />
+        )
+      }
 
       </div>
-      {!showInFooter && (
-        <MobileMenu/>
+      {!showInFooter && mobileview && (
+        <MobileMenu openMenu={openMobileMenu}/>
       )}
     </>
     
