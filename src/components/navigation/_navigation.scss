@@ -56,14 +56,6 @@
   }
 }
 
-// Social block
-.navigation__social {
-  display: none;
-  @include media("min", "lgBig") {
-    @include flex();
-  }
-}
-
 // Main menu block
 .navigation__menu {
   display: none;

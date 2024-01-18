@@ -1,21 +1,39 @@
+import { useState } from "react";
+
 import { Logo } from "../../stories/ui/logo/Logo";
 import { Geo } from "../../stories/ui/geo/Geo";
-import SocialIcon from "../../stories/components/social-icon/SocialIcon";
-import TextWithIcon from "../../stories/ui/text-with-icon/TextWithIcon";
 import { Button } from "../../stories/ui/button/Button";
+
+import TextWithIcon from "../../stories/ui/text-with-icon/TextWithIcon";
+import SocialList from "./components/social-list/SocialList";
 import MainMenu from "./components/main-menu/MainMenu";
 import MenuItem from "./components/main-menu/MenuItem";
+import MobileMenu from "./components/mobile-menu/MobileMenu";
 
 import logo from "./../../assets/logo/logo.svg";
-
 import "./_navigation.scss";
 
 
 
-const Navigation = () => {
+interface NavigationProps {
+  showInFooter?: boolean;
+};
+
+const Navigation = ({
+  showInFooter = false,
+}: NavigationProps) => {
+
+  const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
+
+
+  const toggleMobileMenu = () => {
+    setOpenMobileMenu(!openMobileMenu);
+  }
+
   return (
+    <>
     <div className="navigation">
-   
+
       <div className="navigation__logo">
         <Logo logoSrc={logo}/>
       </div>
@@ -33,27 +51,10 @@ const Navigation = () => {
         />
       </div>
 
-      <div className="navigation__social">
-        <SocialIcon
-          iconName="youtube"
-          socialLink=""
-        />
-        <SocialIcon
-          iconName="vk"
-          socialLink=""
-        />
-        <SocialIcon
-          iconName="telegram"
-          socialLink=""
-        />
-        <SocialIcon
-          iconName="inst"
-          socialLink=""
-        />
-      </div>
+      <SocialList/>
 
       <div className="navigation__menu">
-       <MainMenu/>
+      <MainMenu/>
       </div>
 
       <div className="navigation__contacts">
@@ -64,10 +65,16 @@ const Navigation = () => {
         btnCustomClass="navigation__burger"
         btnStyle="action"
         iconName="burger"
-        showIcon
+        showIcon={true}
+        onClick={toggleMobileMenu}
       />
 
-    </div>
+      </div>
+      {!showInFooter && (
+        <MobileMenu/>
+      )}
+    </>
+    
   );
 };
 

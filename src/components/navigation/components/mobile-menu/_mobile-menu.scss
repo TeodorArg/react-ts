@@ -1,0 +1,6 @@
+@import "../../../../styles/core/core.scss";
+.mobile__menu {
+  @include media("min", "md") {
+    display: none;
+  }
+}
