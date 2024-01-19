@@ -8,6 +8,7 @@ interface TextWithIconProps {
   iconName?: string;
   textInblock?: any | null;
   phoneNumber?: string;
+  loading?: boolean;
 }
 
 /**
@@ -17,22 +18,26 @@ interface TextWithIconProps {
 export const TextWithIcon = ({
   viewInMobile = false,
   isItPhone = false,
+  loading = true,
   textInblock = 'textInblock',
   iconName = 'phone',
   phoneNumber = '',
-  ...props
 }: TextWithIconProps) => {
+  const loadingClass = loading ? 'sceleton' : '';
   return (
-    <div className="text__icon" {...props}>
-      <Icon iconClassName="text__icon--icon" iconName={iconName}/>
+    <div className={["text__icon", isItPhone ? 'phone': null, viewInMobile ? 'mobile' : null].join(' ')}>
       {!isItPhone && (
-        <span className="text__icon--text font-semibold text-base">
-          {textInblock}
-        </span>
+        <>
+          <Icon iconClassName="text__icon--icon" iconName={iconName}/>
+          <span className={["text__icon--text", loadingClass].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>
+            {textInblock}
+          </span>
+        </>
       ) }
       {isItPhone && (
-        <a className="text__icon--text phone--link" href={"tel:" + phoneNumber}>
-          {textInblock}
+        <a className="text__icon" href={"tel:" + phoneNumber}>
+          <Icon iconClassName="text__icon--icon" iconName={iconName}/>
+          <span className={["text__icon--phone", viewInMobile ? 'mobile' : null].join(' ')}>{textInblock}</span>
         </a>
       ) }
      
