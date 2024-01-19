@@ -1,0 +1,96 @@
+@import "../../styles/core/core.scss";
+
+.navigation {
+  @include transition;
+  width: 100%;
+  padding: 0 rem(20px);
+  border-bottom: 1px solid var(--border-nav-color);
+  display: grid;
+  grid-template-rows: 80px;
+  grid-template-columns: minmax(0, 1fr) 32px 40px;
+  column-gap: rem(20px);
+  align-items: center;
+  position: relative;
+  background: transparent;
+  &.dark {
+    background: var(--main-color);
+  }
+  @include media("min", "md") {
+    padding: 0;
+    column-gap: 0;
+    grid-template-rows: rem(80px) rem(81px);
+    justify-content: stretch;
+    align-items: stretch;
+    grid-template-columns: repeat(2, minmax(max-content, 1fr)) max-content;
+  }
+  @include media("min", "lgBig") {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+// Logo block
+.navigation__logo {
+  @include flex(center, center);
+  @include media("min", "lgBig") {
+    grid-row: 1 / span 2;
+  }
+}
+
+// Geo Block
+.navigation__geo {
+  display: none;
+  padding: 0 36px;
+  border-style: solid;
+  border-color: var(--border-nav-color);
+  @include media("min", "md") {
+    @include flex();
+    padding: 0 20px;
+    border-width: 0 1px;
+  }
+}
+
+// Phone block
+.navigation__phone {
+  @include flex();
+  border-style: solid;
+  border-color: var(--border-nav-color);
+  @include media("min", "md") {
+    padding: 0 20px;
+  }
+  @include media("min", "lgBig") {
+    border-right-width: 1px;
+  }
+}
+
+// Main menu block
+.navigation__menu {
+  display: none;
+  border-style: solid;
+  grid-column: 1 / span 2;
+  align-self: stretch;
+  @include media("min", "md") {
+    display: flex;
+    background-color: var(--white);
+  }
+  @include media("min", "lgBig") {
+    grid-column: 2 / span 2;
+  }
+}
+
+// Contact block
+.navigation__contacts {
+  display: none;
+  border-style: solid;
+  border-color: var(--border-nav-color);
+  @include media("min", "md") {
+    @include flex();
+    border-top-width: 1px;
+  }
+}
+
+// Button for Mobile Menu
+.navigation__burger {
+  @include media("min", "md") {
+    display: none;
+  }
+}

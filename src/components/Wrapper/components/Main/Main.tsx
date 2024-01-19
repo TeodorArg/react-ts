@@ -1,9 +1,9 @@
-import React from 'react';
+import SectionHeader from "../../../sections/section-header/SectionHeader";
 
 const Main = () => {
   return (
     <main>
-      MAIN
+      <SectionHeader/>
     </main>
   );
 };

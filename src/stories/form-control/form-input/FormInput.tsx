@@ -46,7 +46,7 @@ export const FormInput = ({
   const errorClass = inputError ? 'form__group--error' : '';
 
   return (
-    <div className={["form__group", errorClass ].join(' ')}>
+    <div className={["form__group", errorClass ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>
       {inputLabel !== "" && (
         <label className="form__label">{inputLabel}</label>
       )}

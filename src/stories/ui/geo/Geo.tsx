@@ -1,5 +1,3 @@
-
-
 import { useGeoState } from "../../../hooks/GeoState";
 
 import {  TextWithIcon } from "../text-with-icon/TextWithIcon";
@@ -7,7 +5,6 @@ import {  TextWithIcon } from "../text-with-icon/TextWithIcon";
 interface GeoProps {
   geoInMobile?: boolean;
   iconClassName?: string;
-
   onlyCityShow?: boolean;
   cityAsString?: string;
   defaultGeoPosition?: string;

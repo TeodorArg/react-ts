@@ -1,9 +1,10 @@
+import Navigation from "../../../navigation/Navigation";
 import "./_header.scss";
 
 const Header = () => {
   return (
     <header>
-      HEADER
+      <Navigation/>
     </header>
   );
 };

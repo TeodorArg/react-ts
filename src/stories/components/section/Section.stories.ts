@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Geo } from "./Geo";
+import Section from "./Section";
 
 const meta = {
-  title: "Components/GeoLocated",
-  component: Geo,
+  title: "Components/Section",
+  component: Section,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
@@ -12,29 +12,13 @@ const meta = {
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {},
-} satisfies Meta<typeof Geo>;
+} satisfies Meta<typeof Section>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const GeoDemo: Story = {
+export const SectionFullScreenImage: Story = {
   args: {
-    iconClassName: "map-marker",
-  },
-};
-
-export const GeoDemoShowOnlyCity: Story = {
-  args: {
-    iconClassName: "map-marker",
-    onlyCityShow: true,
-
-  },
-};
-
-export const GeoCityString: Story = {
-  args: {
-    geoInMobile: false,
-    iconClassName: "map-marker",
-    cityAsString: "Москва",
+    sectionFullScreen: true,
   },
 };

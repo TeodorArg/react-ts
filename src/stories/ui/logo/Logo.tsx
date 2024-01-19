@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import logo from '../../../assets/logo/logo.svg';
 
 interface LogoProps{
   logoSrc?: string;
@@ -9,9 +10,8 @@ const breakpoints = [768, 1440];
 const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
 export const Logo = ({
-  logoSrc = '../../../assets/logo/logo.svg',
+  logoSrc = logo,
   logoInFooter = false,
-  ...props
 }: LogoProps) => {
 
   const IMG = styled.img(
@@ -44,6 +44,6 @@ export const Logo = ({
   // TODO: <div class="footer__logo flex flex-col items-start"></div> if Logo in Footer
 
   return (
-    <IMG {...props} src={logoSrc}  alt="Favorite House" />
+    <IMG src={logoSrc}  alt="Favorite House" />
   );
 };

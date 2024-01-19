@@ -1,0 +1,32 @@
+@import "../../../../styles/core/core.scss";
+
+.main__menu {
+  &:not(.mobile) {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, max-content));
+    column-gap: 12px;
+    justify-content: center;
+    align-content: center;
+  }
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  @include media("min", "xl") {
+    padding: 0 12px;
+  }
+  @include media("min", "xxl") {
+    padding: 0 16px;
+    column-gap: 16px;
+  }
+  @include media("min", "desktop") {
+    padding: 0 28px;
+    column-gap: 28px;
+  }
+  @include media("min", "2xxl") {
+    max-width: 996px;
+    column-gap: 40px;
+  }
+  &.mobile {
+    margin-bottom: 80px;
+  }
+}

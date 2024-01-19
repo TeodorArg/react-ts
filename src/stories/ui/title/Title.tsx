@@ -24,7 +24,7 @@ export const Title = ({
     const twoLines = (secondPtTitle !=='') ? 'title--wrap' : '';
 
     return (
-      <div className={['title', `title--${titleType}`, twoLines, ].join(' ')}>
+      <div className={['title', `title--${titleType}`, twoLines, ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>
         <span>
           {firstPtTitle}
         </span>
