@@ -30,7 +30,7 @@ export const MainMenu = ({mobileView = false, showInFooter = false}: MainMenuPro
     <MenuItem itemName={link.title} itemRouter={link.url} key={link.id}/>
   );
   return (
-    <ul className={["main__menu", mobileView ? 'mobile' : null].join(' ')}>
+    <ul className={["main__menu", mobileView ? 'mobile' : null, showInFooter ? 'footer' : null].join(' ')}>
      {showInFooter? menuItemsFooter : menuItems}
     </ul>
   );

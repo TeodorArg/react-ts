@@ -29,4 +29,26 @@
   &.mobile {
     margin-bottom: 80px;
   }
+  &.footer {
+    justify-items: stretch;
+    text-align: center;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    height: 100%;
+    align-items: center;
+    @include media("min", "md") {
+      column-gap: 12px;
+      grid-template-columns: repeat(5, minmax(0, max-content));
+    }
+    @include media("min", "lg") {
+      justify-content: center;
+      padding: 0 12px;
+    }
+    @include media("min", "desktop") {
+      column-gap: 30px;
+      padding: 0 30px;
+    }
+    @include media("min", "2xxl") {
+      column-gap: 40px;
+    }
+  }
 }

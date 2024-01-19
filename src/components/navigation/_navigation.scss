@@ -65,7 +65,6 @@
 // Main menu block
 .navigation__menu {
   display: none;
-  border-style: solid;
   grid-column: 1 / span 2;
   align-self: stretch;
   @include media("min", "md") {
@@ -92,5 +91,28 @@
 .navigation__burger {
   @include media("min", "md") {
     display: none;
+  }
+}
+
+// Style for navigation in FOOTER
+.navigation.footer {
+  max-width: 1920px;
+  padding: 30px 5px;
+  @include media("min", "md") {
+    padding: 5px 0;
+  }
+  @include media("min", "lgBig") {
+    padding: 0;
+  }
+
+  .navigation__menu {
+    background-color: transparent;
+    border: 1px solid var(--border-nav-color);
+    border-bottom: none;
+  }
+
+  .navigation__copyright {
+    grid-column: 1;
+    grid-row: 2;
   }
 }
