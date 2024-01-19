@@ -26,7 +26,8 @@ export const GeoDemo: Story = {
 export const GeoDemoShowOnlyCity: Story = {
   args: {
     iconClassName: "map-marker",
-    showOnlyCity: true,
+    onlyCityShow: true,
+
   },
 };
 
@@ -34,6 +35,6 @@ export const GeoCityString: Story = {
   args: {
     geoInMobile: false,
     iconClassName: "map-marker",
-    cityString: "Москва",
+    cityAsString: "Москва",
   },
 };
