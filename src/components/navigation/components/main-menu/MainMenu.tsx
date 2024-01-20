@@ -22,18 +22,23 @@ const linksInFooter = [
   { title: 'Контакты', url: '/',  id: 5 },
 ];
 
-export const MainMenu = ({mobileView = false, showInFooter = false}: MainMenuProps) => {
+export default function MainMenu(
+  {
+    mobileView = false,
+    showInFooter = false
+  }: MainMenuProps ) {
+
   const menuItems = links.map(link =>
     <MenuItem itemName={link.title} itemRouter={link.url} key={link.id}/>
   );
+
   const menuItemsFooter = linksInFooter.map(link =>
     <MenuItem itemName={link.title} itemRouter={link.url} key={link.id}/>
   );
+  
   return (
     <ul className={["main__menu", mobileView ? 'mobile' : null, showInFooter ? 'footer' : null].join(' ')}>
      {showInFooter? menuItemsFooter : menuItems}
     </ul>
   );
 };
-
-export default MainMenu;

@@ -13,15 +13,19 @@ const socials = [
   { name: 'inst', url: '/'}
 ];
 
-const SocialList = ({showInMobile = false, showInFooter = false}: SocialListProps) => {
-  const listOfSocial = socials.map((item, index ) => 
-    <SocialIcon iconName={item.name} socialLink={item.url} yellowColor={showInMobile} key={index}/>
-  );
+export default function SocialList(
+  {
+    showInMobile = false, 
+    showInFooter = false
+  }: SocialListProps ) {
+
+    let listOfSocial = socials.map((item, index ) => 
+      <SocialIcon iconName={item.name} socialLink={item.url} yellowColor={showInMobile} key={index}/>
+    );
+
   return (
     <div className={["navigation__social", showInMobile ? 'mobile' : null, showInFooter ? 'footer': null].join(' ')}>
-        {listOfSocial}
-      </div>
+      {listOfSocial}
+    </div>
   );
 };
-
-export default SocialList;

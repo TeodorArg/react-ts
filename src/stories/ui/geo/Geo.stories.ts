@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Geo } from "./Geo";
+import Geo from "./Geo";
 
 const meta = {
   title: "Components/GeoLocated",
@@ -27,7 +27,6 @@ export const GeoDemoShowOnlyCity: Story = {
   args: {
     iconClassName: "map-marker",
     onlyCityShow: true,
-
   },
 };
 

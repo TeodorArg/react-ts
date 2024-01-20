@@ -7,12 +7,12 @@ interface GeoStateProps {
   apiKey?: string;
 }
 
-export const useGeoState = ({
+export default function useGeoState({
   showOnlyCity = false,
   defaultGeo = "Москва",
   cityString = "",
   apiKey = "b79dda1140b248bfbc95e4dbe7c2b513",
-}: GeoStateProps) => {
+}: GeoStateProps) {
   // GEO
   const APIkey = apiKey;
 
@@ -86,11 +86,10 @@ export const useGeoState = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   // GEO ./END
 
   return {
     loading,
     location,
   };
-};
+}

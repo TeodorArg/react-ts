@@ -1,11 +1,9 @@
 import SectionHeader from "../../../sections/section-header/SectionHeader";
 
-const Main = () => {
+export default function Main() {
   return (
     <main>
       <SectionHeader/>
     </main>
   );
 };
-
-export default Main;

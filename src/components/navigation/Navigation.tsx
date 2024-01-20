@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useWindowSize } from "@react-hook/window-size/throttled";
 
 import Logo from "../../stories/ui/logo/Logo";
-import { Geo } from "../../stories/ui/geo/Geo";
+import Geo from "../../stories/ui/geo/Geo";
 import Button from "../../stories/ui/button/Button";
 
 import TextWithIcon from "../../stories/ui/text-with-icon/TextWithIcon";
@@ -14,22 +14,18 @@ import MobileMenu from "./components/mobile-menu/MobileMenu";
 import logo from "./../../assets/logo/logo.svg";
 import "./_navigation.scss";
 
-
-
 interface NavigationProps {
   showInFooter?: boolean;
 };
 
 
-
-const Navigation = ({
-  showInFooter = false,
-}: NavigationProps) => {
+export default function Navigation(
+  {
+    showInFooter = false,
+  }: NavigationProps ) {
 
   const [width] = useWindowSize({ fps: 60 });
-
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
-
 
   const toggleMobileMenu = () => {
     setOpenMobileMenu(!openMobileMenu);
@@ -47,7 +43,7 @@ const Navigation = ({
 
         <div className="navigation__geo">
           { !mobileview && (
-              <Geo showOnlyCity={true}/>
+              <Geo onlyCityShow={true}/>
             ) 
           }
         </div>
@@ -98,8 +94,5 @@ const Navigation = ({
       )}
 
     </>
-    
   );
 };
-
-export default Navigation;
