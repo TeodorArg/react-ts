@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import {  TextWithIcon } from "../text-with-icon/TextWithIcon";
+import TextWithIcon from "../text-with-icon/TextWithIcon";
 
 interface GeoProps {
   geoInMobile?: boolean;

@@ -34,14 +34,16 @@ interface IconProps {
 /**
  * Icon UI component for user interaction
  */
-export const Icon = ({
-  iconName = 'arrow',
-  iconClassName = '',
-  iconColor = '',
-  iconSubColor = '',
-  iconThirdColor = '',
-  iconStyle,
-}: IconProps) => {
+export default function Icon(
+  {
+    iconName = 'arrow',
+    iconClassName = '',
+    iconColor = '',
+    iconSubColor = '',
+    iconThirdColor = '',
+    iconStyle,
+  }: IconProps ) {
+
   const SVG = styled.svg(
     {
       '--icon-color': `${iconColor}`,
@@ -50,8 +52,8 @@ export const Icon = ({
       display: 'inline-flex',
       height: 'inherit'
     }
-  
   )
+  
   return (
     <SVG className={["icon", iconClassName].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")} style={iconStyle}>
         <use href={`${Icons}#${iconName}`}></use>

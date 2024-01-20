@@ -15,26 +15,26 @@ interface TitleProps {
   secondPtTitle?: string;
 }
 
-export const Title = ({
+export default function Title(
+  {
     titleType = "section",
     firstPtTitle = "First Part of Tite",
     secondPtTitle = ""
-  }: TitleProps) => {
+  }: TitleProps ) {
 
-    const twoLines = (secondPtTitle !=='') ? 'title--wrap' : '';
+  const twoLines = (secondPtTitle !=='') ? 'title--wrap' : '';
 
-    return (
-      <div className={['title', `title--${titleType}`, twoLines, ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>
-        <span>
-          {firstPtTitle}
+  return (
+    <div className={['title', `title--${titleType}`, twoLines, ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>
+      <span>
+        {firstPtTitle}
+      </span>
+      {secondPtTitle && (
+        <span className='title--yellow'>
+            {secondPtTitle}
         </span>
-        {secondPtTitle && (
-          <span className='title--yellow'>
-             {secondPtTitle}
-          </span>
-        )}
-      </div>
-    );
+      )}
+    </div>
+  );
 };
 
-export default Title;

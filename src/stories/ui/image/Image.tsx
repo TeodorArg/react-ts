@@ -6,12 +6,12 @@ interface ImageProps {
   imageAlt?: string;
 }
 
-const Image = ({
-  imageSrc = '',
-  imageSrcRetina = '',
-  imageAlt = ''
-}: ImageProps) => {
-
+export default function Image(
+  {
+    imageSrc = '',
+    imageSrcRetina = '',
+    imageAlt = ''
+  }: ImageProps ) {
 
   const IMG = styled.img({
     objectFit: 'cover',
@@ -31,7 +31,6 @@ const Image = ({
   const imageSet = `${imageSrc} 1x, ${imageSrcRetina} 2x`;
   const imageUrl = `${imageSrc}`;
 
-
   return (
     <Picture className='section__image'>
       <source srcSet={imageSet} type="image/webp" />
@@ -39,5 +38,3 @@ const Image = ({
     </Picture>
   );
 };
-
-export default Image;
