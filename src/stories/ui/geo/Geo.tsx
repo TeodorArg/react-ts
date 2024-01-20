@@ -1,4 +1,4 @@
-import { useGeoState } from "../../../hooks/GeoState";
+import useGeoState from "../../../hooks/GeoState";
 
 import TextWithIcon from "../text-with-icon/TextWithIcon";
 
@@ -8,7 +8,6 @@ interface GeoProps {
   onlyCityShow?: boolean;
   cityAsString?: string;
   defaultGeoPosition?: string;
-
 }
 
 /**
@@ -17,13 +16,14 @@ interface GeoProps {
  * If you need to show Only City Name from GeoPosition used onlyCityShow
  */
 
-export const Geo = ({
+export default function Geo(
+  {
     geoInMobile = false,
     iconClassName = 'map-marker',
     onlyCityShow = false,
     defaultGeoPosition = 'Москва',
     cityAsString = '',
-  }: GeoProps) => {
+  }: GeoProps ) {
 
   const{loading, location} = useGeoState({
     showOnlyCity: onlyCityShow, 
@@ -32,7 +32,6 @@ export const Geo = ({
   });
   
   return (
-
     <div>
       <TextWithIcon
         textInblock = {location ? location : cityAsString || null}
@@ -41,6 +40,5 @@ export const Geo = ({
         viewInMobile={geoInMobile}
       />
     </div>
-
   );
 }

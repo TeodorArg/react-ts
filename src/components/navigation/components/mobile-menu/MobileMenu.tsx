@@ -1,4 +1,4 @@
-import { Geo } from "../../../../stories/ui/geo/Geo";
+import Geo from "../../../../stories/ui/geo/Geo";
 import TextWithIcon from "../../../../stories/ui/text-with-icon/TextWithIcon";
 import MainMenu from "../main-menu/MainMenu";
 import SocialList from "../social-list/SocialList";
@@ -7,14 +7,18 @@ import "./_mobile-menu.scss";
 interface MobileMenuProps {
   openMenu?: boolean;
 };
-const MobileMenu = ({openMenu = false}:MobileMenuProps) => {
+
+export default function MobileMenu(
+  {
+    openMenu = false
+  }: MobileMenuProps ) {
 
   const showMenuClass = openMenu ? 'opened' : null;
 
   return (
     <div className={["mobile__menu", showMenuClass].join(' ')}>
       <MainMenu mobileView={true}/>
-      <Geo showOnlyCity={true} geoInMobile={true}/>
+      <Geo onlyCityShow={true} geoInMobile={true}/>
       <TextWithIcon
           iconName="phone"
           isItPhone
@@ -26,5 +30,3 @@ const MobileMenu = ({openMenu = false}:MobileMenuProps) => {
     </div>
   );
 };
-
-export default MobileMenu;

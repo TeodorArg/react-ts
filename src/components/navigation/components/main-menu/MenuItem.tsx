@@ -6,25 +6,23 @@ interface MenuItemProps{
   singlLink?: boolean;
 };
 
-export const MenuItem = ({
+export default function MenuItem(
+  {
     itemName = '',
     itemRouter = '',
     singlLink = false,
-  }: MenuItemProps) => {
-    return (
-     <>
+  }: MenuItemProps ) {
+  return (
+    <>
       {!singlLink ? (
-          <li className="main__menu--item">
-            <a className="main__menu--link" href={itemRouter}>
-              {itemName}
-            </a>
-          </li>
-        ) : (
-          <a className="main__menu--link single--link" href={itemRouter}>{itemName}</a>
-        )}
-     </>
-
-    );
+        <li className="main__menu--item">
+          <a className="main__menu--link" href={itemRouter}>
+            {itemName}
+          </a>
+        </li>
+      ) : (
+        <a className="main__menu--link single--link" href={itemRouter}>{itemName}</a>
+      )}
+    </>
+  );
 };
-
-export default MenuItem;

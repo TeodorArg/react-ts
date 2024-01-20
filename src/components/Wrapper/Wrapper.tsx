@@ -2,7 +2,7 @@ import Header  from "./components/Header/Header";
 import  Main  from "./components/Main/Main";
 import  Footer  from "./components/Footer/Footer";
 
-const Wrapper = () => {
+export default function Wrapper() {
   return (
     <>
       <Header/>
@@ -11,5 +11,3 @@ const Wrapper = () => {
     </>
   );
 };
-
-export default Wrapper;
