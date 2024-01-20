@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TextWithIcon } from "./TextWithIcon";
+import TextWithIcon from "./TextWithIcon";
 import listOfIconsName from "../../helpers/listOfIconsName";
 
 const meta = {

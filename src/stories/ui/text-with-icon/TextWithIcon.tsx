@@ -1,4 +1,4 @@
-import { Icon } from "../icon/Icon";
+import Icon from "../icon/Icon";
 
 import "./_text-with-icon.scss";
 
@@ -15,15 +15,18 @@ interface TextWithIconProps {
  * Button UI component for user interaction
  */
 
-export const TextWithIcon = ({
+export default function TextWithIcon(
+  {
   viewInMobile = false,
   isItPhone = false,
   loading = true,
   textInblock = 'textInblock',
   iconName = 'phone',
   phoneNumber = '',
-}: TextWithIconProps) => {
+  }: TextWithIconProps ) {
+
   const loadingClass = loading ? 'sceleton' : '';
+
   return (
     <div className={["text__icon", isItPhone ? 'phone': null, viewInMobile ? 'mobile' : null].join(' ')}>
       {!isItPhone && (
@@ -40,9 +43,6 @@ export const TextWithIcon = ({
           <span className={["text__icon--phone", viewInMobile ? 'mobile' : null].join(' ')}>{textInblock}</span>
         </a>
       ) }
-     
     </div>
   );
 };
-
-export default TextWithIcon;

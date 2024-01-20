@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useWindowSize } from "@react-hook/window-size/throttled";
 
-import { Logo } from "../../stories/ui/logo/Logo";
+import Logo from "../../stories/ui/logo/Logo";
 import { Geo } from "../../stories/ui/geo/Geo";
-import { Button } from "../../stories/ui/button/Button";
+import Button from "../../stories/ui/button/Button";
 
 import TextWithIcon from "../../stories/ui/text-with-icon/TextWithIcon";
 import SocialList from "./components/social-list/SocialList";

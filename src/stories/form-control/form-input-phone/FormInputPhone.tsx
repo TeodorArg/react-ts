@@ -17,31 +17,34 @@ interface FormInputPhoneProps {
   inputPhoneValue: string
 }
 
-export const FormInputPhone = ({
-  inputLabel = "",
-  inputPhoneMask = "+7 (###) ###-##-##",
-  inputPhoneValue ="9999999999",
-}: FormInputPhoneProps) => {
-    const [focused, setInputFocused] = useState(false);
-    const [fullNumber, setFullPhone] = useState(false);
+export default function FormInputPhone(
+  {
+    inputLabel = "",
+    inputPhoneMask = "+7 (###) ###-##-##",
+    inputPhoneValue ="9999999999",
+  }: FormInputPhoneProps ) {
 
-    const onFocused = () => {
-      setInputFocused(true);
-    }
+  const [focused, setInputFocused] = useState(false);
+  const [fullNumber, setFullPhone] = useState(false);
 
-    const onBlur = () => {
-      setInputFocused(false);
-    }
+  const onFocused = () => {
+    setInputFocused(true);
+  }
 
-    const completePhone = () => {
-      setFullPhone(true);
-    }
+  const onBlur = () => {
+    setInputFocused(false);
+  }
 
-    const incompletePhone = () => {
-      setFullPhone(false);
-    }
+  const completePhone = () => {
+    setFullPhone(true);
+  }
 
-    const inputPhoneClass = focused || fullNumber ? 'focused' : '';
+  const incompletePhone = () => {
+    setFullPhone(false);
+  }
+
+  const inputPhoneClass = focused || fullNumber ? 'focused' : '';
+  
   return (
     <div className="form__group">
       {inputLabel !== "" && (
@@ -65,6 +68,5 @@ export const FormInputPhone = ({
           }}
         />
     </div>
-   
   );
 }

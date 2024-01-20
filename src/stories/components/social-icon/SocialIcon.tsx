@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import "../../../styles/core/_colors.scss";
-import  { Icon } from "../../ui/icon/Icon";
+import  Icon from "../../ui/icon/Icon";
 
 interface SocialIconProps {
   iconName?: string;
@@ -8,12 +8,12 @@ interface SocialIconProps {
   yellowColor?: boolean;
 }
 
-
-export const SocialIcon = ({
-  iconName = "youtube",
-  socialLink = '',
-  yellowColor = false,
-}: SocialIconProps) => {
+export default function SocialIcon(
+  {
+    iconName = "youtube",
+    socialLink = '',
+    yellowColor = false,
+  }: SocialIconProps ) {
 
   const Link = styled.a(
     {
@@ -67,5 +67,3 @@ export const SocialIcon = ({
     </Link>
   );
 };
-
-export default SocialIcon;

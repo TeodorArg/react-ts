@@ -23,14 +23,15 @@ interface FormInputProps {
   register?: any,
 }
 
-export const FormInput = ({
-  inputLabel = '',
-  inputPlaceholder = '',
-  inputType = 'text',
-  inputError,
-  register,
-  ...props
-}: FormInputProps) => {
+export default function FormInput(
+  {
+    inputLabel = '',
+    inputPlaceholder = '',
+    inputType = 'text',
+    inputError,
+    register,
+    ...props
+  }: FormInputProps ) {
 
   function placeholderState(type: string, placeholderText: string) {
     switch(type) {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { MainForm } from "./MainForm";
+import MainForm from "./MainForm";
 
 const meta = {
   title: "Components/MainForm",

@@ -9,10 +9,11 @@ interface LogoProps{
 const breakpoints = [768, 1440];
 const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
-export const Logo = ({
-  logoSrc = logo,
-  logoInFooter = false,
-}: LogoProps) => {
+export default function Logo(
+  {
+    logoSrc = logo,
+    logoInFooter = false,
+  }: LogoProps ) {
 
   const IMG = styled.img(
     logoInFooter ? {

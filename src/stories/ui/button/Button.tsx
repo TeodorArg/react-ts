@@ -1,4 +1,4 @@
-import { Icon } from '../icon/Icon';
+import Icon from '../icon/Icon';
 import './_button.scss';
 
 interface ButtonProps {
@@ -51,25 +51,28 @@ interface ButtonProps {
 /**
  * Button UI component for user interaction
  */
-export const Button = ({
-  btnLabel = '',
-  btnStyle = 'yellow',
-  btnSize = 'medium',
-  showIcon = false,
-  iconName = '',
-  btnFull = false,
-  btnThinkBorder = false,
-  btnRounded = false,
-  btnSubmit = false,
-  btnCustomClass,
-  onClick,
-}: ButtonProps) => {
+export default function Button(
+  {
+    btnLabel = '',
+    btnStyle = 'yellow',
+    btnSize = 'medium',
+    showIcon = false,
+    iconName = '',
+    btnFull = false,
+    btnThinkBorder = false,
+    btnRounded = false,
+    btnSubmit = false,
+    btnCustomClass,
+    onClick,
+  }: ButtonProps ) {
+
   const style = (btnStyle === '') ? 'btn--border' : `btn--${btnStyle}`;
   const width = btnFull ? 'btn--full' : '';
   const border = btnThinkBorder ? 'btn--border--think' : '';
   const hasIcon = showIcon ? 'btn--icon' : '';
   const hasLabel = (btnLabel !== '') ? 'btn--label' : '';
   const rounded = btnRounded ? 'btn--rounded' : '';
+
   return (
     <button
       type={btnSubmit ? "submit" : "button"}
@@ -85,14 +88,16 @@ export const Button = ({
         btnCustomClass
       ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}
     >
+      
       {(!btnRounded && btnStyle !== 'action') && (
           <span>{btnLabel}</span>
         )
       }
      
       {hasIcon && (
-            <Icon iconName={iconName}/>
-         )}
+        <Icon iconName={iconName}/>
+      )}
+
     </button>
   );
 };
