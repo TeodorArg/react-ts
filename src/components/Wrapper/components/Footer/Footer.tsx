@@ -1,9 +1,10 @@
-import React from 'react';
+import "./_footer.scss";
+import Navigation from "../../../navigation/Navigation";
 
 const Footer = () => {
   return (
     <footer>
-      FOOTER
+      <Navigation showInFooter={true}/>
     </footer>
   );
 };
