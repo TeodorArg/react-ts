@@ -1,9 +1,11 @@
 import styled from '@emotion/styled';
+import Copyright from '../../../components/navigation/components/copyright/copyright';
 import logo from '../../../assets/logo/logo.svg';
 
 interface LogoProps{
   logoSrc?: string;
   logoInFooter?: boolean;
+  showCopyright?: boolean;
 }
 
 const breakpoints = [768, 1440];
@@ -13,6 +15,7 @@ export default function Logo(
   {
     logoSrc = logo,
     logoInFooter = false,
+    showCopyright = false,
   }: LogoProps ) {
 
   const IMG = styled.img(
@@ -38,13 +41,29 @@ export default function Logo(
         width: '319px',
         height:'55px',
       }
-
     }
   );
 
-  // TODO: <div class="footer__logo flex flex-col items-start"></div> if Logo in Footer
+  const DIV= styled.div(
+    {
+      display: 'grid',
+      gap: '27px',
+      justifyItems: 'center',
+      textAlign: 'center',
+      [mq[1]]: {
+        gap: '59px',
+      }
+    }
+  );
 
   return (
-    <IMG src={logoSrc}  alt="Favorite House" />
+    <DIV>
+      <IMG src={logoSrc} alt="Favorite House"/>
+      { logoInFooter && showCopyright && (
+          <Copyright />
+        )
+      }
+    </DIV>
+   
   );
 };
