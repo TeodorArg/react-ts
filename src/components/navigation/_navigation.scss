@@ -97,9 +97,14 @@
 // Style for navigation in FOOTER
 .navigation.footer {
   max-width: 1920px;
-  padding: 30px 5px;
+  padding: 30px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: auto;
   @include media("min", "md") {
-    padding: 5px 0;
+    padding: 0;
+    display: grid;
   }
   @include media("min", "lgBig") {
     padding: 0;
@@ -107,12 +112,51 @@
 
   .navigation__menu {
     background-color: transparent;
-    border: 1px solid var(--border-nav-color);
-    border-bottom: none;
+    @include media("min", "md") {
+      border: 1px solid var(--border-nav-color);
+      border-bottom: none;
+    }
   }
 
-  .navigation__copyright {
-    grid-column: 1;
-    grid-row: 2;
+  @media screen and (max-width: 767px) {
+    .navigation__logo {
+      order: 1;
+    }
+    .navigation__geo {
+      display: block;
+      order: 3;
+      margin: 45px 0 30px;
+    }
+
+    .navigation__phone {
+      order: 4;
+      .text__icon {
+        .text__icon--icon {
+          --icon-color: var(--white);
+        }
+        .text__icon--phone.mobile {
+          color: var(--white);
+          display: inline;
+        }
+      }
+    }
+
+    .navigation__social {
+      display: grid;
+      order: 5;
+      margin: 30px 0;
+    }
+
+    .navigation__menu {
+      display: block;
+      border-bottom: 1px solid var(--border-nav-color);
+      order: 2;
+      margin-top: 30px;
+    }
+
+    .navigation__copyright {
+      display: block;
+      order: 6;
+    }
   }
 }

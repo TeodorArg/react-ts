@@ -33,7 +33,7 @@ export default function MainMenu(
   );
 
   const menuItemsFooter = linksInFooter.map(link =>
-    <MenuItem itemName={link.title} itemRouter={link.url} key={link.id}/>
+    <MenuItem inFooter={showInFooter} itemName={link.title} itemRouter={link.url} key={link.id}/>
   );
   
   return (

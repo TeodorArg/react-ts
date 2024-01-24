@@ -10,6 +10,7 @@ import SocialList from "./components/social-list/SocialList";
 import MainMenu from "./components/main-menu/MainMenu";
 import MenuItem from "./components/main-menu/MenuItem";
 import MobileMenu from "./components/mobile-menu/MobileMenu";
+import Copyright from "./components/copyright/copyright";
 
 import logo from "./../../assets/logo/logo.svg";
 import "./_navigation.scss";
@@ -33,28 +34,46 @@ export default function Navigation(
 
   const mobileview = width < 768;
 
+  const mobileClass = openMobileMenu ? 'dark' : '';
+  const footerClass = showInFooter ? 'footer' : '';
+  // const geoInHeader = !(mobileview && showInFooter)
+
+
   return (
     <>
-      <div className={["navigation", openMobileMenu ? 'dark' : null, showInFooter ? 'footer' : null].join(" ")}>
+      <div className={["navigation", mobileClass, footerClass].join(' ')}>
 
         <div className="navigation__logo">
-          <Logo logoSrc={logo}/>
+          <Logo logoSrc={logo} logoInFooter={showInFooter} showCopyright={!mobileview}/>
         </div>
 
         <div className="navigation__geo">
-          { !mobileview && (
-              <Geo onlyCityShow={true}/>
-            ) 
-          }
+          {!showInFooter && (
+            <Geo onlyCityShow={true} />
+          )}
+          {showInFooter && (
+            <Geo onlyCityShow={true} />
+          )}
+          
+          
         </div>
 
         <div className="navigation__phone">
-          {!openMobileMenu && (
+          {(!openMobileMenu && !showInFooter) && (
             <TextWithIcon
               iconName="phone"
               isItPhone
               phoneNumber="+79817770076"
               textInblock="+7 (981) 777-00-76"
+            />
+          )}
+          {(showInFooter) && (
+            <TextWithIcon
+              iconName="phone"
+              isItPhone
+              phoneNumber="+79817770076"
+              textInblock="+7 (981) 777-00-76"
+              viewInMobile={mobileview}
             />
           )}
         </div>
@@ -79,20 +98,17 @@ export default function Navigation(
             />
           )
         }
-
-        { showInFooter && (
-           <div className="navigation__copyright mt-[50px] md:mt-0 flex order-7 justify-center md:hidden">
-              Favorite house © 2023. Все права защищены.
-            </div>
-          )
-        }
-       
+        {showInFooter && mobileview && (
+        <Copyright />
+      )}
       </div>
 
       {!showInFooter && mobileview && (
         <MobileMenu openMenu={openMobileMenu}/>
       )}
 
+     
+      
     </>
   );
 };

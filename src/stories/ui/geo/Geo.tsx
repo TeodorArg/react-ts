@@ -8,6 +8,7 @@ interface GeoProps {
   onlyCityShow?: boolean;
   cityAsString?: string;
   defaultGeoPosition?: string;
+  duplicate?: boolean;
 }
 
 /**
@@ -27,18 +28,16 @@ export default function Geo(
 
   const{loading, location} = useGeoState({
     showOnlyCity: onlyCityShow, 
-    defaultGeo: defaultGeoPosition, 
-    cityString: cityAsString
+    defaultGeo: defaultGeoPosition
   });
+
   
   return (
-    <div>
-      <TextWithIcon
-        textInblock = {location ? location : cityAsString || null}
-        iconName = {iconClassName}
-        loading = {loading}
-        viewInMobile={geoInMobile}
-      />
-    </div>
+    <TextWithIcon
+      textInblock = {cityAsString === '' ? location : cityAsString}
+      iconName = {iconClassName}
+      loading = {cityAsString === '' ? !loading : false}
+      viewInMobile={geoInMobile}
+    />
   );
 }

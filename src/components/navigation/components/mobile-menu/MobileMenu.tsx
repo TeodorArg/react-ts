@@ -18,7 +18,7 @@ export default function MobileMenu(
   return (
     <div className={["mobile__menu", showMenuClass].join(' ')}>
       <MainMenu mobileView={true}/>
-      <Geo onlyCityShow={true} geoInMobile={true}/>
+      {<Geo onlyCityShow={true} geoInMobile={true}/>}
       <TextWithIcon
           iconName="phone"
           isItPhone

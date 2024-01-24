@@ -11,6 +11,11 @@
       padding: 0;
       border-top-width: 0;
     }
+    &.in-footer {
+      .main__menu--link {
+        @include hover(var(--white), var(--yellow-hover));
+      }
+    }
   }
   &--link {
     @extend .txt--uppercase;
