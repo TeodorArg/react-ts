@@ -52,7 +52,7 @@ export default function Navigation(
             <Geo onlyCityShow={true} />
           )}
           {showInFooter && (
-            <Geo onlyCityShow={true} />
+            <Geo cityAsString="Москва" />
           )}
           
           
