@@ -1,0 +1,50 @@
+@import "../../../../../styles/core/core.scss";
+
+.header__badge {
+  color: var(--white);
+  border-radius: rem(8px);
+  position: relative;
+  border: 1px solid var(--yellow);
+  padding: 10px;
+  @include media("min", "lg") {
+    padding: 20px;
+  }
+
+  &.second {
+    margin-top: 30px;
+    @include media("min", "lg") {
+      margin-top: 50px;
+    }
+  }
+
+  &--title {
+    @include font(rem(32px), rem(41px));
+    margin-bottom: 10px;
+    @include media("min", "lg") {
+      @include font(rem(36px), rem(46px));
+    }
+  }
+
+  &--text {
+    @include font(rem(14px), rem(20px));
+    @include media("min", "lg") {
+      @include font(rem(16px), rem(24px));
+    }
+  }
+  &--icon {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 22px;
+    height: 29px !important;
+    @include media("min", "lg") {
+      left: 20px;
+    }
+    & + div {
+      margin-top: 30px;
+      @include media("min", "lg") {
+        margin-top: 32px;
+      }
+    }
+  }
+}

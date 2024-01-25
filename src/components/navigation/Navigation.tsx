@@ -35,7 +35,7 @@ export default function Navigation(
   const mobileview = width < 768;
 
   const mobileClass = openMobileMenu ? 'dark' : '';
-  const footerClass = showInFooter ? 'footer' : '';
+  const footerClass = showInFooter ? 'footer w-full' : '';
   // const geoInHeader = !(mobileview && showInFooter)
 
 
