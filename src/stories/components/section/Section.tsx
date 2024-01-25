@@ -44,7 +44,7 @@ export default function Section(
   );
   
   return (
-    <SectionBlock className={sectionCustomClass? sectionCustomClass : undefined}>
+    <SectionBlock className={sectionCustomClass? sectionCustomClass : ''}>
       { sectionFullScreen && (
           <Image imageAsBg={true} imageSrc={sectionImg} imageSrcRetina={sectionImgRetina} imageAlt="Favorite House"/>
         )

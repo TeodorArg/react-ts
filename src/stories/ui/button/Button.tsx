@@ -86,7 +86,7 @@ export default function Button(
         hasLabel,
         rounded,
         btnCustomClass
-      ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}
+      ].join(' ')}
     >
       
       {(!btnRounded && btnStyle !== 'action') && (

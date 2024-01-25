@@ -1,0 +1,82 @@
+@import "../../../styles/core/core.scss";
+
+.main__content {
+  position: absolute;
+  z-index: 10;
+  top: 188px;
+  left: 0;
+  right: 0;
+  display: grid;
+  padding: 0 20px;
+
+  @include media("min", "lg") {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 12px;
+  }
+
+  @include media("min", "lgBig") {
+    top: 331px;
+  }
+
+  @include media("min", "xl") {
+    column-gap: 20px;
+  }
+
+  @include media("min", "full") {
+    top: 390px;
+  }
+}
+
+.main__left {
+  color: var(--white);
+  @include media("min", "lg") {
+    grid-column: span 6 / span 6;
+  }
+  @include media("min", "lgBig") {
+    grid-column: span 7 / span 7;
+  }
+}
+
+.main__right {
+  @include media("min", "lg") {
+    grid-column: span 6 / span 6;
+  }
+  @include media("min", "lgBig") {
+    grid-column: span 5 / span 5;
+  }
+}
+
+// Style for Typography
+.main__title {
+  text-wrap: balance;
+  @include font(rem(24px), rem(28px));
+  @include media("min", "lg") {
+    @include font(rem(32px), rem(40px));
+  }
+  @include media("min", "xl") {
+    @include font(rem(56px), rem(62px));
+  }
+}
+
+.main__text {
+  line-height: rem(20px);
+  margin: rem(16px) 0 rem(28px);
+  @include media("min", "lg") {
+    @include font(rem(22px), rem(28px));
+    margin: rem(20px) 0 rem(43px);
+  }
+  @include media("min", "xl") {
+    @include font(rem(24px), rem(32px));
+    margin: rem(25px) 0 rem(50px);
+  }
+}
+
+.main__btn {
+  margin-bottom: 70px;
+  @include media("min", "sm") {
+    width: 355px;
+  }
+  .btn-house {
+    width: 100%;
+  }
+}
