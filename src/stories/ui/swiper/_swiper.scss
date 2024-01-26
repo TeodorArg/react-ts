@@ -1,0 +1,58 @@
+@import "../../../styles/core/core.scss";
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+
+.swiper {
+  &__controls {
+    @include flex(center, flex-end);
+    position: relative;
+    height: 60px;
+    margin-top: 60px;
+    padding-right: 20px;
+    @include media("min", "xl") {
+      padding-right: 100px;
+      justify-content: space-between;
+    }
+    &--navigation {
+      display: none;
+      position: relative;
+      justify-content: flex-start;
+      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      @include media("min", "xl") {
+        display: grid;
+      }
+      .swiper-prev,
+      .swiper-next {
+        .icon {
+          width: 32px;
+        }
+      }
+      .swiper-prev .icon {
+        transform: rotate(180deg);
+      }
+    }
+    &--button {
+      width: 164px;
+    }
+  }
+}
+
+// Fix for housese swiper
+
+.swiper-slide {
+  width: calc(100% - 20px);
+  @media screen and (min-width: 640px) {
+    width: calc(50% - 20px);
+  }
+  @include media("min", "lg") {
+    width: calc(100% - 30px);
+  }
+  @include media("min", "xl") {
+    width: calc(50% - 35px);
+  }
+}
+.swiper-button-disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}

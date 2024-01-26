@@ -35,6 +35,7 @@ export default function Section(
       }
     } : {
       maxWidth: '1920px',
+      margin: '0 auto'
     },
     {
       width: '100%',
