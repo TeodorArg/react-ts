@@ -47,7 +47,8 @@
     background: var(--white);
     &:hover,
     &:focus {
-      border-color: (--yellow-hover);
+      border-color: var(--yellow-hover);
+      color: var(--yellow-hover);
     }
     &--think {
       border: 1px solid var(--main-color);

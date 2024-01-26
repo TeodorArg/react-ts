@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useWindowSize } from "@react-hook/window-size/throttled";
+import { useWindowWidth } from "@react-hook/window-size/throttled";
 
 import Logo from "../../stories/ui/logo/Logo";
 import Geo from "../../stories/ui/geo/Geo";
@@ -25,14 +25,14 @@ export default function Navigation(
     showInFooter = false,
   }: NavigationProps ) {
 
-  const [width] = useWindowSize({ fps: 60 });
+  const onlyWidth = useWindowWidth();
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
 
   const toggleMobileMenu = () => {
     setOpenMobileMenu(!openMobileMenu);
   }
 
-  const mobileview = width < 768;
+  const mobileview = onlyWidth < 768;
 
   const mobileClass = openMobileMenu ? 'dark' : '';
   const footerClass = showInFooter ? 'footer w-full' : '';

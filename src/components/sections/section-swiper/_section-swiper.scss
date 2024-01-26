@@ -1,0 +1,73 @@
+@import "../../../styles/core/core.scss";
+
+.section--swiper {
+  padding: 80px 20px;
+  display: grid;
+  gap: 10px;
+  overflow: hidden;
+  max-width: none;
+
+  @include media("min", "lg") {
+    padding: 80px 0px 80px 20px;
+    gap: 20px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  @include media("min", "xl") {
+    padding-left: 60px;
+  }
+
+  .section__left-side {
+    @include media("min", "lg") {
+      grid-column: span 3 / span 3;
+    }
+
+    p {
+      @include font(rem(16px), rem(20px));
+      margin-top: 24px;
+      @include media("min", "lg") {
+        @include font(rem(18px), rem(24px));
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .section__right-side {
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+    padding: 20px 0 20px 20px;
+    background-color: var(--white);
+    @include media("min", "lg") {
+      grid-column: span 9 / span 9;
+    }
+    @include media("min", "xl") {
+      padding: 60px 0 60px 60px;
+    }
+  }
+}
+
+// Fix for housese swiper
+.section__right-side--swiper {
+  .swiper-slide {
+    width: calc(100% - 20px);
+    @media screen and (min-width: 640px) {
+      width: calc(50% - 20px);
+    }
+    @include media("min", "md") {
+      width: calc(43% - 20px);
+    }
+    @include media("min", "lg") {
+      width: calc(50% - 30px);
+    }
+    @include media("min", "xl") {
+      width: calc(50% - 35px);
+    }
+    @include media("min", "full") {
+      width: calc(33.33% - 40px);
+    }
+  }
+  .swiper-button-disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
+}

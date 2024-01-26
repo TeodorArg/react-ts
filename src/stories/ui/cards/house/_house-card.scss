@@ -1,0 +1,74 @@
+@import "../../../../styles/core/core.scss";
+
+.house__card {
+  &--img {
+    width: 100%;
+    height: 170px;
+    margin-bottom: rem(16px);
+    overflow: hidden;
+    @include media("min", "lgBig") {
+      margin-bottom: rem(20px);
+      height: 350px;
+    }
+  }
+
+  &--info {
+    display: grid;
+    width: 100%;
+    grid-auto-flow: dense;
+    justify-items: stretch;
+    row-gap: rem(10px);
+    @include media("min", "lgBig") {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: rem(32px);
+    }
+  }
+
+  &--name {
+    display: grid;
+    row-gap: rem(5px);
+    @include media("min", "lgBig") {
+      row-gap: rem(10px);
+    }
+    span {
+      &:first-of-type {
+        @include media("min", "lgBig") {
+          @include font(rem(20px), rem(28px));
+        }
+      }
+    }
+  }
+
+  &--price {
+    padding: rem(16px) rem(24px);
+    justify-self: start;
+    border: 2px solid var(--yellow);
+    margin: rem(10px) 0;
+    @include media("min", "lgBig") {
+      @include font(rem(20px), rem(28px));
+      margin: 0;
+      justify-self: auto;
+    }
+  }
+
+  &--properties {
+    @include font(rem(14px), rem(24px));
+    color: var(--gray);
+    display: grid;
+    justify-items: start;
+    grid-template-columns: repeat(2, minmax(0, auto));
+    justify-content: space-between;
+    column-gap: 20px;
+    @include media("min", "lgBig") {
+      @include font(rem(16px), rem(28px));
+      justify-content: flex-start;
+    }
+  }
+
+  &--btn {
+    width: 100%;
+    @include media("min", "lgBig") {
+      grid-column: span 2 / span 2;
+    }
+  }
+}

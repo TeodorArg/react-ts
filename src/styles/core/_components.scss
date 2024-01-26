@@ -3,3 +3,16 @@
   max-width: 1920px;
   margin: 0 auto;
 }
+
+picture {
+  display: block;
+}
+.object-cover {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+}
+
+.border--default {
+  border-radius: 8px;
+}
