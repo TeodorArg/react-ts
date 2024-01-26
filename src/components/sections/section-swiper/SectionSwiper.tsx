@@ -1,4 +1,3 @@
-
 import Section from "../../../stories/components/section/Section";
 import Title from "../../../stories/ui/title/Title";
 import SwiperSlider from "../../../stories/ui/swiper/SwiperSlider";
@@ -87,7 +86,7 @@ export default function SectionSwiper({
   const swiperType = isHousesSwiper ? "houses" : "reviews";
 
   return (
-    <Section sectionCustomClass="section__swiper">
+    <Section sectionCustomClass="section__swiper" sectionSwiper={true}>
 
       <div className="section__left-side">
 

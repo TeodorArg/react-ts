@@ -69,6 +69,15 @@ export default function SwiperSlider({
               nextEl: ".swiper-next",
               prevEl: ".swiper-prev",
             },
+          },
+          1920: {
+            spaceBetween: 40,
+            slidesOffsetAfter: 40,
+            navigation: {
+              enabled: true,
+              nextEl: ".swiper-next",
+              prevEl: ".swiper-prev",
+            },
           }
         }}
       >

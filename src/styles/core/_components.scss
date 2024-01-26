@@ -7,6 +7,11 @@
 picture {
   display: block;
 }
+.object-cover {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+}
 
 .border--default {
   border-radius: 8px;

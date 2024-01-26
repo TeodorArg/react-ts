@@ -59,6 +59,9 @@
     @include media("min", "xl") {
       width: calc(50% - 35px);
     }
+    @include media("min", "full") {
+      width: calc(33.33% - 40px);
+    }
   }
   .swiper-button-disabled {
     opacity: 0.75;
