@@ -84,7 +84,7 @@ export default function SectionSwiper({
     isHousesSwiper = true,
   }: SectionSwiperProps ) {
 
-    const swiperType = isHousesSwiper ? "houses" : "reviews";
+  const swiperType = isHousesSwiper ? "houses" : "reviews";
 
   return (
     <Section sectionCustomClass="section__swiper">
@@ -97,17 +97,17 @@ export default function SectionSwiper({
         />
 
         <p className="txt--medium">
-         {swiperSectionDesc}
+          {swiperSectionDesc}
         </p>
 
       </div>
 
-      <div className="section__right-side">
+      <div className="section__right-side section__right-side--swiper">
 
         {isHousesSwiper && (
           <SwiperSlider swiperBtnCatalog={true} swiperSliders={isHousesSwiper ? housesArray : reviewsArray} sliderType={swiperType}/>
         )}
-        
+      
       </div>
     </Section>
   );
