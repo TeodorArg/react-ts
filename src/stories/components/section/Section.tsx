@@ -34,24 +34,26 @@ export default function Section(
     styleFullScreen = { marginLeft: sectionMarginLeft, maxWidth: `calc(100% - ${sectionMarginLeft})`}
   }
 
+  const sectionClass = sectionCustomClass ? 'section ' + sectionCustomClass : 'section';
+
   
   return (
     <>
       { sectionSwiper && (
-          <section className="section section--swiper" style={styleFullScreen}>
+          <section className={sectionClass} style={styleFullScreen}>
             {children}
           </section>
         ) 
       }
       { sectionFullScreen && (
-          <section className="section section--full">
+          <section className={sectionClass}>
             <Image imageAsBg={true} imageSrc={sectionImg} imageSrcRetina={sectionImgRetina} imageAlt="Favorite House"/>
             {children}
           </section>
         )
       }
       { !sectionSwiper && !sectionFullScreen && (
-          <section className={["section", sectionCustomClass ? sectionCustomClass : ''].join(' ')}>
+          <section className={sectionClass}>
             {children}
           </section>
         )

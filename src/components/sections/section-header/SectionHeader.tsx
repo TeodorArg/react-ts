@@ -3,13 +3,13 @@ import Button from "../../../stories/ui/button/Button";
 import HeaderBadges from "./components/header-badges/HeaderBadges";
 
 import Img from "./../../../assets/images/sections/home/home-main.webp";
-import ImgRetina from "./../../../assets/images/sections/home/home-main.webp";
+import ImgRetina from "./../../../assets/images/sections/home/home-main@2x.webp";
 
 import "./_section-header.scss";
 
 export default function SectionHeader() {
   return (
-    <Section sectionFullScreen={true} sectionImg={Img} sectionImgRetina={ImgRetina}>
+    <Section sectionFullScreen={true} sectionImg={Img} sectionImgRetina={ImgRetina} sectionCustomClass="section--full">
         <div className="main__content w-full">
 
           <div className="main__left">
