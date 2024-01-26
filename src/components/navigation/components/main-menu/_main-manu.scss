@@ -4,13 +4,15 @@
   &:not(.mobile) {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, max-content));
-    column-gap: 12px;
     justify-content: center;
     align-content: center;
   }
   padding: 0px;
   height: 100%;
   width: 100%;
+  @include media("min", "md") {
+    column-gap: 12px;
+  }
   @include media("min", "xl") {
     padding: 0 12px;
   }
@@ -36,7 +38,6 @@
     height: 100%;
     align-items: center;
     @include media("min", "md") {
-      column-gap: 12px;
       grid-template-columns: repeat(5, minmax(0, max-content));
     }
     @include media("min", "lg") {
@@ -44,11 +45,7 @@
       padding: 0 12px;
     }
     @include media("min", "desktop") {
-      column-gap: 30px;
       padding: 0 30px;
-    }
-    @include media("min", "2xxl") {
-      column-gap: 40px;
     }
   }
 }

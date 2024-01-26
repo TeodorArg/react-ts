@@ -86,7 +86,7 @@ export default function SectionSwiper({
   const swiperType = isHousesSwiper ? "houses" : "reviews";
 
   return (
-    <Section sectionCustomClass="section__swiper" sectionSwiper={true}>
+    <Section sectionSwiper={true}>
 
       <div className="section__left-side">
 
