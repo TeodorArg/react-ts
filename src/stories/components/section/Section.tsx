@@ -30,7 +30,6 @@ export default function Section(
   const onlyWidth = useWindowWidth();
   let sectionMarginLeft = "";
 
-  console.log(onlyWidth);
 
   if(SwiperResize && onlyWidth > 1920) {
     sectionMarginLeft = `${(onlyWidth - 1920) / 2}px`;
