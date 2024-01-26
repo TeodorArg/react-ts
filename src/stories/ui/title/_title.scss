@@ -33,8 +33,11 @@
     color: var(--yellow-dark);
   }
   &--wrap {
-    display: grid;
-    column-gap: 1em;
-    justify-items: start;
+    @include flex(center, flex-start);
+    flex-wrap: wrap;
+    gap: 5px;
+    @include media("min", "2xxl") {
+      gap: 11px;
+    }
   }
 }
