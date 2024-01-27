@@ -7,6 +7,8 @@ import "./_section.scss";
 interface SectionProps {
   sectionFullScreen?: boolean;
   sectionSwiper?: boolean;
+  sectionAction?: boolean;
+  sectionDefault?: boolean;
   sectionCustomClass?: string;
   sectionImg?: string;
   sectionImgRetina?: string;
@@ -17,6 +19,8 @@ export default function Section(
   {
     sectionFullScreen = false,
     sectionSwiper = false,
+    sectionAction = false,
+    sectionDefault = false,
     sectionCustomClass = '',
     sectionImg = '',
     sectionImgRetina = '',
@@ -29,29 +33,52 @@ export default function Section(
   let styleFullScreen = {};
   let sectionMarginLeft = "";
 
-  if (sectionSwiper && onlyWidth > 1920) {
-    sectionMarginLeft = `${(onlyWidth - 1920) / 2}px`;
-    styleFullScreen = { marginLeft: sectionMarginLeft, maxWidth: `calc(100% - ${sectionMarginLeft})`}
-  }
+  if (sectionSwiper) {
+    if (onlyWidth > 1720) {
+      sectionMarginLeft = `${(onlyWidth - 1720) / 2}px`;
+      styleFullScreen = { marginLeft: sectionMarginLeft, maxWidth: `calc(100% - ${sectionMarginLeft})`}
+    } else if (onlyWidth > 2500) {
+      sectionMarginLeft = `${(onlyWidth - 1840) / 2}px`;
+      styleFullScreen = { marginLeft: sectionMarginLeft, maxWidth: `calc(100% - ${sectionMarginLeft})`}
+    } else {
+      sectionMarginLeft = "0px";
+      styleFullScreen = { marginLeft: sectionMarginLeft, maxWidth: "1720px"}
+    } 
 
   
+    if (onlyWidth > 2500) {
+      
+      styleFullScreen = { marginLeft: sectionMarginLeft, maxWidth: `calc(100% - ${sectionMarginLeft})`}
+    }
+  }
+  
+
+  const sectionClass = sectionCustomClass ? 'section ' + sectionCustomClass : 'section';
+
   return (
     <>
       { sectionSwiper && (
-          <section className="section section--swiper" style={styleFullScreen}>
+          <section className={sectionClass} style={styleFullScreen}>
             {children}
           </section>
         ) 
       }
       { sectionFullScreen && (
-          <section className="section section--full">
+          <section className={sectionClass}>
             <Image imageAsBg={true} imageSrc={sectionImg} imageSrcRetina={sectionImgRetina} imageAlt="Favorite House"/>
             {children}
           </section>
         )
       }
-      { !sectionSwiper && !sectionFullScreen && (
-          <section className={["section", sectionCustomClass ? sectionCustomClass : ''].join(' ')}>
+      { sectionAction && (
+          <section className={sectionClass}>
+            {children}
+          </section>
+        )
+      }
+      {
+        sectionDefault && (
+          <section className={sectionClass}>
             {children}
           </section>
         )

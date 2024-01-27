@@ -63,17 +63,18 @@ export default function MainForm(
                 required: true,
                 autoFocus: true
               }}
-              country={"ru"}
-              onlyCountries={["ru"]}
-              placeholder="+7 (999) 999-99-99"
+              country={'ru'}
+              onlyCountries={['ru']}
+              masks={{ru: '(...) ...-..-..'}}
               containerClass="form__group"
               inputClass="form__group--item form__input"
+              specialLabel=""
             />
           )
         }
       />
 
-      <Button btnSubmit={true} btnLabel={formBtnLabel}/>
+      <Button btnCustomClass="form__button" btnSubmit={true} btnLabel={formBtnLabel} btnFull={true}/>
 
     </form>
   )

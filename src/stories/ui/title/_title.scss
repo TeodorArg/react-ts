@@ -33,11 +33,18 @@
     color: var(--yellow-dark);
   }
   &--wrap {
-    @include flex(center, flex-start);
     flex-wrap: wrap;
     gap: 5px;
     @include media("min", "2xxl") {
       gap: 11px;
     }
+  }
+  &--nowrap {
+    flex-wrap: nowrap;
+  }
+  &--transfer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
   }
 }

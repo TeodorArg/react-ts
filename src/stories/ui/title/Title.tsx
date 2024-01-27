@@ -13,19 +13,25 @@ interface TitleProps {
   * Second part of Title
   */
   secondPtTitle?: string;
+  /**
+  * Forced Wrap Text in Title
+  */
+  forcedWrap?: boolean;
 }
 
 export default function Title(
   {
     titleType = "section",
     firstPtTitle = "First Part of Tite",
-    secondPtTitle = ""
+    secondPtTitle = "",
+    forcedWrap = false
   }: TitleProps ) {
 
   const twoLines = (secondPtTitle !=='') ? 'title--wrap' : '';
+  const transfer = forcedWrap ? 'title--transfer': '';
 
   return (
-    <div className={['title', `title--${titleType}`, twoLines, ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>
+    <div className={['title', `title--${titleType}`, twoLines, transfer].join(' ')}>
       <span>
         {firstPtTitle}
       </span>

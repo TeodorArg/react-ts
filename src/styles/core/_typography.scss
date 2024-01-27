@@ -34,6 +34,14 @@ body {
   &--bold {
     font-weight: 700;
   }
+  &--yellow {
+    color: var(--yellow-hover);
+  }
+  &--underline {
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+  }
   &--menu {
     @include font(rem(20px), rem(20px));
     @include media("min", "md") {
@@ -48,5 +56,32 @@ body {
     @include media("min", "xl") {
       @include font(rem(16px), rem(20px));
     }
+  }
+}
+
+// Style for list
+.list__check {
+  @extend .txt--small;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 15px;
+  @include media("min", "lg") {
+    @include font(rem(16px), rem(20px));
+    gap: 13px;
+    margin-bottom: 20px;
+  }
+  @include media("min", "2xxl") {
+    @include font(rem(20px), rem(28px));
+    gap: 11px;
+  }
+  &--item {
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(2, minmax(0, auto));
+    gap: 8px;
+  }
+  &--icom {
+    width: 32px;
+    height: 32px;
   }
 }

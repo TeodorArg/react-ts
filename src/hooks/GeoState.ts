@@ -17,6 +17,25 @@ export default function useGeoState({
   const [location, setLocation] = useState<string>();
   const [loading, loadingSucsess] = useState<boolean>(false);
 
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.permissions
+        .query({ name: "geolocation" })
+        .then(function (result) {
+          if (result.state === "granted") {
+            navigator.geolocation.getCurrentPosition(success, errors, options);
+          } else if (result.state === "prompt") {
+            navigator.geolocation.getCurrentPosition(success, errors, options);
+          } else if (result.state === "denied") {
+            //If denied then you have to show instructions to enable location
+          }
+        });
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -30,6 +49,8 @@ export default function useGeoState({
 
   function errors(err: any) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
+    setLocation(defaultGeo);
+    loadingSucsess(true);
   }
 
   function getLocationInfo(latitude: any, longitude: any) {
@@ -59,28 +80,10 @@ export default function useGeoState({
       .catch((error) => console.error(error));
   }
 
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.permissions
-        .query({ name: "geolocation" })
-        .then(function (result) {
-          if (result.state === "granted") {
-            navigator.geolocation.getCurrentPosition(success, errors, options);
-          } else if (result.state === "prompt") {
-            navigator.geolocation.getCurrentPosition(success, errors, options);
-          } else if (result.state === "denied") {
-            //If denied then you have to show instructions to enable location
-          }
-        });
-    } else {
-      console.log("Geolocation is not supported by this browser.");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   // GEO ./END
 
   return {
-    loading,
     location,
+    loading,
   };
 }
