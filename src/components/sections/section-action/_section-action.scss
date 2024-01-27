@@ -10,10 +10,22 @@
   width: calc(100% - 40px);
   @include media("min", "lg") {
     grid-template-columns: repeat(12, minmax(0, 1fr));
+    row-gap: 30px;
   }
   @include media("min", "xl") {
     margin: 0 auto 90px;
     padding: 60px;
+  }
+  &--title {
+    @include media("min", "lg") {
+      grid-column: span 12 / span 12;
+    }
+    & + .section__action--left {
+      display: none;
+      @include media("min", "lg") {
+        display: block;
+      }
+    }
   }
   &--left {
     @include media("min", "lg") {

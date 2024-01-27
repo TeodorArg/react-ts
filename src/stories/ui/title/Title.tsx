@@ -17,6 +17,10 @@ interface TitleProps {
   * Forced Wrap Text in Title
   */
   forcedWrap?: boolean;
+  /**
+  * Custom Class for Title
+  */
+  titleCustomClass?: string;
 }
 
 export default function Title(
@@ -24,14 +28,15 @@ export default function Title(
     titleType = "section",
     firstPtTitle = "First Part of Tite",
     secondPtTitle = "",
-    forcedWrap = false
+    forcedWrap = false,
+    titleCustomClass = "",
   }: TitleProps ) {
 
   const twoLines = (secondPtTitle !=='') ? 'title--wrap' : '';
   const transfer = forcedWrap ? 'title--transfer': '';
 
   return (
-    <div className={['title', `title--${titleType}`, twoLines, transfer].join(' ')}>
+    <div className={['title', `title--${titleType}`, twoLines, transfer, titleCustomClass].join(' ')}>
       <span>
         {firstPtTitle}
       </span>
