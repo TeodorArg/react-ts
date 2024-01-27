@@ -15,7 +15,7 @@
     "@types/node": "^16.18.70",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
-    "@type/react-range-slider-input": "1.0.1",
+    "@types/react-range-slider-input": "1.0.1",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "modern-normalize": "^2.0.0",
