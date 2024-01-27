@@ -1,0 +1,48 @@
+@import "../../../../styles/core/core.scss";
+
+.review__card {
+  display: grid;
+  gap: 10px;
+  background-color: var(--main-bg);
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 1fr 18px;
+  padding: 20px;
+  height: 276px;
+  overflow: hidden;
+  @include media("min", "lg") {
+    gap: 20px;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 1fr 18px;
+    height: 300px;
+  }
+  &--image {
+    height: 75px;
+    @include media("min", "lg") {
+      height: 150px;
+    }
+  }
+  &--name {
+    @include font(rem(16px), rem(20px));
+    @include media("min", "lg") {
+      @include font(rem(20px), rem(26px));
+    }
+  }
+  &--desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    margin-top: 10px;
+    overflow: hidden;
+    @include media("min", "lg") {
+      @include font(rem(16px), rem(20px));
+      margin-top: 15px;
+    }
+  }
+  &--date {
+    color: var(--gray);
+    grid-column: span 2 / span 2;
+    @include media("min", "lg") {
+      @include font(rem(16px), rem(20px));
+    }
+  }
+}

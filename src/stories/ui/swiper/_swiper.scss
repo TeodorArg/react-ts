@@ -35,5 +35,11 @@
     &--button {
       width: 164px;
     }
+    &--buttons {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(3, max-content);
+      align-items: center;
+    }
   }
 }
