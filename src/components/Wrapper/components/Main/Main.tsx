@@ -9,6 +9,7 @@ export default function Main() {
   return (
     <main>
       <SectionHeader/>
+
       <SectionSwiper 
         swiperSectionTitlePtOne = "Популярные"
         swiperSectionTitlePtTwo = "проекты"
@@ -16,12 +17,18 @@ export default function Main() {
         строительства и используем уникальные технологии, 
         позволяющие нашим домам служить нескольким поколениям."
       />
+
       <SectionAction
           sectionTitlePt1="НЕ НАШЛИ ПОДХОДЯЩИЙ"
           sectionTitlePt2="ПРОЕКТ?"
           imgSrc={sectionImgAction}
           imgSrcRetina={sectionImgActionRetina}
           consultationForm={true} />
+
+       <SectionSwiper 
+        swiperSectionTitlePtOne = "Отзывы"
+        isHousesSwiper={false}
+      />
     </main>
   );
 };

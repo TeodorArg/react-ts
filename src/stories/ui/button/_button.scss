@@ -68,6 +68,13 @@
     @extend .font--small;
     height: rem(43px);
     font-weight: 400;
+    padding: 0 16px;
+    @include media("min", "lg") {
+      padding: 0 24px;
+    }
+    @include media("min", "xxl") {
+      padding: 0 32px;
+    }
   }
   &--medium {
     height: rem(59px);

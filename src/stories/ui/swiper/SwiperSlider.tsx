@@ -3,18 +3,18 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import Button from "../button/Button";
 import HouseCard from "../cards/house/HouseCard";
+import ReviewCard from "../cards/review/ReviewCard";
 
 import "./_swiper.scss";
 
 interface SwiperProps{
   swiperBtnCatalog?: boolean,
-  swiperSliders: itemSliders,
-  sliderType?: "houses" | "reviews" | "masonry" | "single",
+  swiperSliders: itemsSliders,
+  sliderType?: 'houses' | 'reviews' | 'masonry' | 'single',
   children?: React.ReactNode,
 }
 
 interface sliderItem {
-  id?: number;
   title?: string;
   image?: string;
   desc?: string;
@@ -23,21 +23,21 @@ interface sliderItem {
   full?: string;
   size?: string;
   floors?: string;
+  date?: string;
 }
 
-interface itemSliders extends Array<sliderItem> {}
+interface itemsSliders extends Array<sliderItem> {}
 
 
 export default function SwiperSlider({
     swiperBtnCatalog=true,
     swiperSliders = [],
-    sliderType = "houses",
+    sliderType,
   }: SwiperProps) {
 
-  const sliderItems = swiperSliders.map(slider =>
-    <SwiperSlide  key={slider.id}>
+  const sliderHouse = swiperSliders.map((slider, index)=>
+    <SwiperSlide  key={index}>
       <HouseCard 
-        key={slider.id}
         houseTitle={slider.title}
         houseImage={slider.image}
         houseDesc={slider.desc}
@@ -48,8 +48,17 @@ export default function SwiperSlider({
         houseFloors={slider.floors}
       />
     </SwiperSlide>
-   
+  );
 
+  const sliderReview = swiperSliders.map((slider, index) =>
+    <SwiperSlide  key={index}>
+      <ReviewCard 
+        name={slider.title}
+        image={slider.image}
+        desc={slider.desc}
+        date={slider.date}
+      />
+    </SwiperSlide>
   );
 
   return (
@@ -81,11 +90,14 @@ export default function SwiperSlider({
           }
         }}
       >
-        {sliderItems}
+        {sliderType === "houses" && (sliderHouse)}
+        {sliderType === "reviews" && (sliderReview)}
+        
       </Swiper>
           
       {/* Controls */}
       <div className="swiper__controls">
+
         <div className="swiper__controls--navigation">
           {/* Navigation buttons*/}
           <Button
@@ -107,8 +119,29 @@ export default function SwiperSlider({
         { /* Button */
           swiperBtnCatalog && (
             <div className="swiper__controls--button">
-            <Button btnLabel="В каталог" btnStyle="" />
-          </div>
+              <Button btnLabel="В каталог" btnStyle="" />
+            </div>
+          )
+        }
+
+        { /* Button */
+          sliderType === "reviews" && (
+            <div className="swiper__controls--buttons">
+              <Button
+                btnLabel="Сообщение"
+                btnSize="small"
+                btnStyle="black"
+                onClick={() => {}}
+              />
+              <span>/</span>
+              <Button
+                btnLabel="Видео"
+                btnStyle=""
+                btnSize="small"
+                btnThinkBorder
+                onClick={() => {}}
+              />
+            </div>
           )
         }
       
