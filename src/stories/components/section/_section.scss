@@ -3,5 +3,8 @@
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  max-width: 1920px;
+  max-width: 1720px;
+  @media screen and (min-width: 2500px) {
+    max-width: 1840px;
+  }
 }

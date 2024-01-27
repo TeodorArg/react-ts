@@ -16,6 +16,9 @@
   @include media("min", "xl") {
     padding-left: 60px;
   }
+  @include media("min", "full") {
+    padding-left: 40px;
+  }
 
   .section__left-side {
     @include media("min", "lg") {

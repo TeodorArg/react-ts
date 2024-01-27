@@ -30,7 +30,6 @@ export default function Geo(
     showOnlyCity: onlyCityShow, 
     defaultGeo: defaultGeoPosition
   });
-
   
   return (
     <TextWithIcon

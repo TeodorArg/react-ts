@@ -31,10 +31,12 @@
 
   @include media("min", "xl") {
     column-gap: 20px;
+    padding: 0 20px 0 60px;
   }
 
   @include media("min", "full") {
     top: 390px;
+    padding: 0 40px;
   }
 }
 

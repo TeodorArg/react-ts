@@ -1,0 +1,41 @@
+@import "../../../styles/core/core.scss";
+
+.section__action {
+  display: grid;
+  gap: 30px;
+  background-color: var(--white);
+  overflow: hidden;
+  padding: 20px;
+  margin: 0 20px 80px;
+  width: calc(100% - 40px);
+  @include media("min", "lg") {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  @include media("min", "xl") {
+    margin: 0 auto 90px;
+    padding: 60px;
+  }
+  &--left {
+    @include media("min", "lg") {
+      grid-column: span 4 / span 4;
+    }
+  }
+  &--right {
+    @include media("min", "lg") {
+      grid-column: span 8 / span 8;
+    }
+  }
+  &--image {
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    max-width: 445px;
+    max-height: 422px;
+    @include media("min", "lg") {
+      display: block;
+    }
+    @include media("min", "xl") {
+      max-width: 645px;
+    }
+  }
+}
