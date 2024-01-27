@@ -2,7 +2,7 @@ import Section from "../../../stories/components/section/Section";
 import Title from "../../../stories/ui/title/Title";
 import Image from "../../../stories/ui/image/Image";
 import ConsultationForm from "./components/ConsultationForm";
-import SelectionForm from "./components/SelectionForm";
+import SelectionForm from "../../../stories/components/forms/SelectionForm";
 
 import "./_section-action.scss";
 
@@ -40,7 +40,7 @@ export default function SectionAction({sectionTitlePt1, sectionTitlePt2, imgSrc,
            consultationForm ? (
             <ConsultationForm/>
            ) : (
-            <SelectionForm/>
+            <SelectionForm formBtnLabel="подобрать проект"/>
            )
         }
       </div>

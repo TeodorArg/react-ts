@@ -1,0 +1,44 @@
+@import "../../../styles/core/core.scss";
+
+.form__range {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  justify-content: stretch;
+  .form__label {
+    margin-bottom: 0;
+  }
+}
+
+.form__group--inputs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  @include media("min", "xs") {
+    grid-template-columns: repeat(2, minmax(124px, 135px));
+  }
+}
+
+.form__group--slider {
+  height: 16px;
+  background: var(--range-bg);
+  grid-column: span 2 / span 2;
+  .range-slider__range {
+    background: var(--yellow);
+    height: 50%;
+  }
+  .range-slider__thumb {
+    height: 16px;
+    width: 16px;
+    background: var(--main-color);
+  }
+}
+
+.form__range--slider {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  justify-content: space-between;
+  gap: 5px;
+  color: var(--placeholder-color);
+  @include font(rem(16px), rem(28px));
+}

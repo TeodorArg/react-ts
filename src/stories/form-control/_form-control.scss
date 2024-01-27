@@ -14,6 +14,19 @@
     border: var(--form-inputs-border);
     color: var(--main-color);
     width: 100%;
+    &.small {
+      height: rem(46px);
+    }
+  }
+}
+
+.form__label {
+  margin-bottom: 20px;
+  @include media("min", "xs") {
+    @include font(rem(20px), rem(24px));
+  }
+  @include media("min", "xxl") {
+    @include font(rem(24px), rem(28px));
   }
 }
 

@@ -49,7 +49,7 @@ export default function FormInput(
   return (
     <div className={["form__group", errorClass ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>
       {inputLabel !== "" && (
-        <label className="form__label">{inputLabel}</label>
+        <label className="form__label txt--semibold">{inputLabel}</label>
       )}
       <input type={inputType} className="form__group--item form__input" 
         placeholder={placeholderState(inputType, inputPlaceholder)} {...register} {...props} />

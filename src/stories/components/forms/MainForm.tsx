@@ -1,4 +1,4 @@
-import { useForm, Controller, SubmitHandler } from "react-hook-form"
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import PhoneInput from 'react-phone-input-2';
 import FormInput from '../../form-control/form-input/FormInput';
 import Button from '../../ui/button/Button';
