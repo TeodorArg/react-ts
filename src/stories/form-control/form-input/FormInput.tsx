@@ -29,8 +29,7 @@ export default function FormInput(
     inputPlaceholder = '',
     inputType = 'text',
     inputError,
-    register,
-    ...props
+    register
   }: FormInputProps ) {
 
   function placeholderState(type: string, placeholderText: string) {
@@ -52,7 +51,7 @@ export default function FormInput(
         <label className="form__label txt--semibold">{inputLabel}</label>
       )}
       <input type={inputType} className="form__group--item form__input" 
-        placeholder={placeholderState(inputType, inputPlaceholder)} {...register} {...props} />
+        placeholder={placeholderState(inputType, inputPlaceholder)} {...register}/>
         {inputError && (
             <div className='form__group--error-text txt--invalid'>
               { inputError }

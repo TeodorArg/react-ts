@@ -1,3 +1,4 @@
+import { useForm, SubmitHandler } from "react-hook-form";
 import FormRange from '../../form-control/form-range/FormRange';
 import FormInput from '../../form-control/form-input/FormInput';
 import Button from '../../ui/button/Button';
@@ -12,12 +13,33 @@ interface SelectionFormProps {
   formBtnLabel?: string;
 }
 
+interface IFormValues {
+  "price": any,
+  "area": any,
+  "techno": any
+}
+
 export default function SelectionForm({formBtnLabel="formBtnLabel"}: SelectionFormProps) {
 
+  const { register, handleSubmit} = useForm<IFormValues>()
+
+
+
+
+  const onSubmit: SubmitHandler<IFormValues> = (data) => {
+    console.log(data);
+  }
+
+
+
+
   return (
-    <form className='form__selection'>
-      
+    <form onSubmit={handleSubmit(onSubmit)} className='form__selection'>
+
       <FormRange
+
+        register={register}
+        name="price"
         inputLabel="Выберите цену"
         inputUnits="₽"
         minRange={0}
@@ -26,7 +48,10 @@ export default function SelectionForm({formBtnLabel="formBtnLabel"}: SelectionFo
         rangeValueMax={87095}
       />
 
+      
+{/* 
       <FormRange
+        register={register}
         inputLabel='Выберите площадь'
         inputUnits='м2'
         minRange={98}
@@ -34,8 +59,10 @@ export default function SelectionForm({formBtnLabel="formBtnLabel"}: SelectionFo
         rangeValueMin={150}
         rangeValueMax={923}
       />
+       */}
 
       <FormInput
+        register={register("techno")}
         inputLabel="Технология строительства"
         inputPlaceholder='Технология строительства'
       />
