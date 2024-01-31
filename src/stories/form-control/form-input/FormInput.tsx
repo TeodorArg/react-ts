@@ -35,9 +35,9 @@ export default function FormInput(
   function placeholderState(type: string, placeholderText: string) {
     switch(type) {
       case 'email':
-        return placeholderText = "E-mail"
+        return placeholderText = 'E-mail'
       case 'number':
-        return placeholderText = "0"
+        return placeholderText = '0'
       default:
         return inputPlaceholder
     }
@@ -46,8 +46,8 @@ export default function FormInput(
   const errorClass = inputError ? 'form__group--error' : '';
 
   return (
-    <div className={["form__group", errorClass ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")}>
-      {inputLabel !== "" && (
+    <div className={['form__group', errorClass ].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, '')}>
+      {inputLabel !== '' && (
         <label className="form__label txt--semibold">{inputLabel}</label>
       )}
       <input type={inputType} className="form__group--item form__input" 

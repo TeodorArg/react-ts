@@ -1,5 +1,5 @@
-import MenuItem from "./MenuItem";
-import "./_main-manu.scss";
+import MenuItem from './MenuItem';
+import './_main-manu.scss';
 
 interface MainMenuProps{
   mobileView?: boolean;
@@ -37,7 +37,7 @@ export default function MainMenu(
   );
   
   return (
-    <ul className={["main__menu", mobileView ? 'mobile' : null, showInFooter ? 'footer' : null].join(' ')}>
+    <ul className={['main__menu', mobileView ? 'mobile' : null, showInFooter ? 'footer' : null].join(' ')}>
      {showInFooter? menuItemsFooter : menuItems}
     </ul>
   );

@@ -1,4 +1,4 @@
-import "./_revew-card.scss";
+import './_revew-card.scss';
 
 interface ReviewCardProps {
   name?: string;
@@ -8,10 +8,10 @@ interface ReviewCardProps {
 }
 
 export default function ReviewCard({
-    name="",
-    image="",
-    desc="",
-    date=""
+    name='',
+    image='',
+    desc='',
+    date=''
   }: ReviewCardProps) {
 
   return (

@@ -55,7 +55,7 @@ export default function Icon(
   )
   
   return (
-    <SVG className={["icon", iconClassName].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")} style={iconStyle}>
+    <SVG className={['icon', iconClassName].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, '')} style={iconStyle}>
         <use href={`${Icons}#${iconName}`}></use>
     </SVG>
   );

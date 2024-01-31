@@ -1,34 +1,34 @@
 import styled from '@emotion/styled';
-import HeaderBage from "./HeaderBage";
+import HeaderBage from './HeaderBage';
 
 const badges = [
   {
-    "title": "12 %",
-    "text": "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur."
+    'title': '12 %',
+    'text': 'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.'
   },
   {
-    "title": "",
-    "text": "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur."
+    'title': '',
+    'text': 'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.'
   },
   {
-    "title": "",
-    "text": "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur."
+    'title': '',
+    'text': 'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.'
   },
   {
-    "title": "1 924",
-    "text": "Lorem ipsum dolor sit amet consectetur."
+    'title': '1 924',
+    'text': 'Lorem ipsum dolor sit amet consectetur.'
   },
   {
-    "title": "20 %",
-    "text": "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur."
+    'title': '20 %',
+    'text': 'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.'
   },
   {
-    "title": "",
-    "text": "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur."
+    'title': '',
+    'text': 'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.'
   },
   {
-    "title": "20 %",
-    "text": "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur."
+    'title': '20 %',
+    'text': 'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.'
   }
 ];
 
@@ -40,7 +40,7 @@ export default function HeaderBadges() {
       gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
       gap: '10px',
       '@media (min-width: 992px)': {
-        gap: "20px",
+        gap: '20px',
       },
       '& > div': {
         display: 'grid',

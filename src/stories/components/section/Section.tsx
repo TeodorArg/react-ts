@@ -1,8 +1,8 @@
 import React from 'react';
-import { useWindowWidth } from "@react-hook/window-size/throttled";
+import { useWindowWidth } from '@react-hook/window-size/throttled';
 import Image from '../../ui/image/Image';
 
-import "./_section.scss";
+import './_section.scss';
 
 interface SectionProps {
   sectionFullScreen?: boolean;
@@ -31,7 +31,7 @@ export default function Section(
   const onlyWidth = useWindowWidth();
 
   let styleFullScreen = {};
-  let sectionMarginLeft = "";
+  let sectionMarginLeft = '';
 
   if (sectionSwiper) {
     if (onlyWidth > 1720) {
@@ -41,8 +41,8 @@ export default function Section(
       sectionMarginLeft = `${(onlyWidth - 1840) / 2}px`;
       styleFullScreen = { marginLeft: sectionMarginLeft, maxWidth: `calc(100% - ${sectionMarginLeft})`}
     } else {
-      sectionMarginLeft = "0px";
-      styleFullScreen = { marginLeft: sectionMarginLeft, maxWidth: "1720px"}
+      sectionMarginLeft = '0px';
+      styleFullScreen = { marginLeft: sectionMarginLeft, maxWidth: '1720px'}
     } 
 
   

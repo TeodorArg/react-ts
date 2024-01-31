@@ -1,6 +1,6 @@
-import Button from "../../button/Button";
+import Button from '../../button/Button';
 
-import "./_house-card.scss";
+import './_house-card.scss';
 
 interface HouseCardProps {
   houseTitle?: string;
@@ -15,14 +15,14 @@ interface HouseCardProps {
 
 
 export default function HouseCard({ 
-    houseTitle = "",
-    houseImage = "",
-    houseDesc = "",
-    housePrice = "",
-    houseArea = "",
-    houseFullArea = "",
-    houseSize = "",
-    houseFloors = ""
+    houseTitle = '',
+    houseImage = '',
+    houseDesc = '',
+    housePrice = '',
+    houseArea = '',
+    houseFullArea = '',
+    houseSize = '',
+    houseFloors = ''
   }: HouseCardProps ) {
 
   return (

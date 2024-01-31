@@ -1,5 +1,5 @@
-import Icon from "../../../../../stories/ui/icon/Icon";
-import "./_header-bage.scss";
+import Icon from '../../../../../stories/ui/icon/Icon';
+import './_header-bage.scss';
 
 interface HeaderBageProps {
   bageTitle?: string;

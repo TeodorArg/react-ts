@@ -75,7 +75,7 @@ export default function Button(
 
   return (
     <button
-      type={btnSubmit ? "submit" : "button"}
+      type={btnSubmit ? 'submit' : 'button'}
       onClick={onClick}
       className={[
         'btn-house', `btn--${btnSize}`, 

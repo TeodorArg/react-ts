@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import "../../../styles/core/_colors.scss";
-import  Icon from "../../ui/icon/Icon";
+import '../../../styles/core/_colors.scss';
+import  Icon from '../../ui/icon/Icon';
 
 interface SocialIconProps {
   iconName?: string;
@@ -10,7 +10,7 @@ interface SocialIconProps {
 
 export default function SocialIcon(
   {
-    iconName = "youtube",
+    iconName = 'youtube',
     socialLink = '',
     yellowColor = false,
   }: SocialIconProps ) {

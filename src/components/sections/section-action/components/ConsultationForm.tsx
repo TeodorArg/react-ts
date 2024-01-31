@@ -1,6 +1,6 @@
-import MainForm from "../../../../stories/components/forms/MainForm";
-import Icon from "../../../../stories/ui/icon/Icon";
-import "./_consultation-form.scss";
+import MainForm from '../../../../stories/components/forms/MainForm';
+import Icon from '../../../../stories/ui/icon/Icon';
+import './_consultation-form.scss';
 
 
 const list = [

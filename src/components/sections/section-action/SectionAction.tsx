@@ -1,10 +1,10 @@
-import Section from "../../../stories/components/section/Section";
-import Title from "../../../stories/ui/title/Title";
-import Image from "../../../stories/ui/image/Image";
-import ConsultationForm from "./components/ConsultationForm";
-import SelectionForm from "../../../stories/components/forms/SelectionForm";
+import Section from '../../../stories/components/section/Section';
+import Title from '../../../stories/ui/title/Title';
+import Image from '../../../stories/ui/image/Image';
+import ConsultationForm from './components/ConsultationForm';
+import SelectionForm from '../../../stories/components/forms/SelectionForm';
 
-import "./_section-action.scss";
+import './_section-action.scss';
 
 interface SectionActionProps {
   sectionTitlePt1?: string;

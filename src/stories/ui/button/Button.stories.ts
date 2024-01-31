@@ -1,17 +1,17 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import Button from "./Button";
+import Button from './Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "UI/Button",
+  title: 'UI/Button',
   component: Button,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
+    layout: 'centered',
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {},
 } satisfies Meta<typeof Button>;
@@ -22,56 +22,56 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Yellow: Story = {
   args: {
-    btnLabel: "Button",
-    btnStyle: "yellow",
+    btnLabel: 'Button',
+    btnStyle: 'yellow',
     showIcon: false,
   },
 };
 
 export const Black: Story = {
   args: {
-    btnLabel: "Button",
-    btnStyle: "black",
+    btnLabel: 'Button',
+    btnStyle: 'black',
   },
 };
 
 export const Border: Story = {
   args: {
-    btnLabel: "Button",
-    btnStyle: "",
+    btnLabel: 'Button',
+    btnStyle: '',
   },
 };
 
 export const BorderThink: Story = {
   args: {
-    btnLabel: "Button",
-    btnStyle: "",
+    btnLabel: 'Button',
+    btnStyle: '',
     btnThinkBorder: true,
   },
 };
 
 export const Small: Story = {
   args: {
-    btnLabel: "Button",
-    btnStyle: "black",
-    btnSize: "small",
+    btnLabel: 'Button',
+    btnStyle: 'black',
+    btnSize: 'small',
   },
 };
 
 export const Rounder: Story = {
   args: {
-    btnStyle: "yellow",
+    btnStyle: 'yellow',
     btnRounded: true,
     showIcon: true,
-    iconName: "arrow",
+    iconName: 'arrow',
   },
 };
 
 export const Action: Story = {
   args: {
-    btnStyle: "action",
+    btnStyle: 'action',
     btnRounded: false,
     showIcon: true,
-    iconName: "burger",
+    iconName: 'burger',
   },
 };

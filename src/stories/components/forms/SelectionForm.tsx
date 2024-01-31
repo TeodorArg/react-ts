@@ -1,10 +1,10 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, type SubmitHandler } from 'react-hook-form';
 import FormRange from '../../form-control/form-range/FormRange';
 import FormInput from '../../form-control/form-input/FormInput';
 import Button from '../../ui/button/Button';
 
-import "../../form-control/_form-control.scss";
-import "./_forms.scss";
+import '../../form-control/_form-control.scss';
+import './_forms.scss';
 
 interface SelectionFormProps {
   /**
@@ -14,12 +14,12 @@ interface SelectionFormProps {
 }
 
 interface IFormValues {
-  "price": any,
-  "area": any,
-  "techno": any
+  'price': any,
+  'area': any,
+  'techno': any
 }
 
-export default function SelectionForm({formBtnLabel="formBtnLabel"}: SelectionFormProps) {
+export default function SelectionForm({formBtnLabel='formBtnLabel'}: SelectionFormProps) {
 
   const { register, handleSubmit} = useForm<IFormValues>()
 
@@ -62,7 +62,7 @@ export default function SelectionForm({formBtnLabel="formBtnLabel"}: SelectionFo
        */}
 
       <FormInput
-        register={register("techno")}
+        register={register('techno')}
         inputLabel="Технология строительства"
         inputPlaceholder='Технология строительства'
       />

@@ -1,6 +1,6 @@
-import useGeoState from "../../../hooks/GeoState";
+import useGeoState from '../../../hooks/GeoState';
 
-import TextWithIcon from "../text-with-icon/TextWithIcon";
+import TextWithIcon from '../text-with-icon/TextWithIcon';
 
 interface GeoProps {
   geoInMobile?: boolean;

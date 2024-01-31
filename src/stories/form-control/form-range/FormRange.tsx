@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import RangeSlider from "react-range-slider-input";
-import "react-range-slider-input/dist/style.css";
+import RangeSlider from 'react-range-slider-input';
+import 'react-range-slider-input/dist/style.css';
 
-import "./_form-range.scss";
+import './_form-range.scss';
 import '../_form-control.scss';
 
 
@@ -49,7 +49,7 @@ interface FormRangeProps {
 }
 
 export default function FormRange({
-    inputLabel = "inputLabel",
+    inputLabel = 'inputLabel',
     inputUnits,
     rangeValueMin = 20,
     rangeValueMax = 350,
@@ -76,8 +76,8 @@ export default function FormRange({
 
     return (
       <div className="form__group form__range">
-        {inputLabel !== "" && (
-          <label className="form__label txt--semibold">{inputLabel} {inputUnits !== "" ? <span className='txt--yellow'>({inputUnits})</span> : false}</label>
+        {inputLabel !== '' && (
+          <label className="form__label txt--semibold">{inputLabel} {inputUnits !== '' ? <span className='txt--yellow'>({inputUnits})</span> : false}</label>
         )}
 
         <div className="form__group--inputs">
@@ -93,9 +93,9 @@ export default function FormRange({
         </div>
 
         <div className="form__range--slider">
-          <RangeSlider onInput={setValue} onThumbDragEnd={() => setTotalValue(`${value[0]} - ${value[1]} ${inputUnits}`)} min={minRange} max={maxRange} value={value} className="form__group--slider border--default" />
+          <RangeSlider onInput={setValue} onThumbDragEnd={() => { setTotalValue(`${value[0]} - ${value[1]} ${inputUnits}`); }} min={minRange} max={maxRange} value={value} className="form__group--slider border--default" />
           <span>{minRange}</span>
-          <input className="form__range--slider--total" value={`${value[0]} - ${value[1]} ${inputUnits}`} {...register(name, total)} readOnly/>
+          <input className="form__range--slider--total" value={`${value[0]} - ${value[1]} ${inputUnits}`} {...register(total)} readOnly/>
           <span>{maxRange}</span>
         </div>
        

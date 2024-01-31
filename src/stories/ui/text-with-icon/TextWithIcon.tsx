@@ -1,6 +1,6 @@
-import Icon from "../icon/Icon";
+import Icon from '../icon/Icon';
 
-import "./_text-with-icon.scss";
+import './_text-with-icon.scss';
 
 interface TextWithIconProps {
   viewInMobile?: boolean;
@@ -32,19 +32,19 @@ export default function TextWithIcon(
 
   
   return (
-    <div className={["text__icon", phoneClass, mobileClass].join(' ')}>
+    <div className={['text__icon', phoneClass, mobileClass].join(' ')}>
       {!isItPhone && (
         <>
           <Icon iconClassName="text__icon--icon" iconName={iconName}/>
-          <span className={["text__icon--text", loadingClass].join(' ')}>
+          <span className={['text__icon--text', loadingClass].join(' ')}>
             { textInblock }
           </span>
         </>
       ) }
       {isItPhone && (
-        <a className="text__icon" href={"tel:" + phoneNumber}>
+        <a className="text__icon" href={'tel:' + phoneNumber}>
           <Icon iconClassName="text__icon--icon" iconName={iconName}/>
-          <span className={["text__icon--phone", mobileClass].join(' ')}>{textInblock}</span>
+          <span className={['text__icon--phone', mobileClass].join(' ')}>{textInblock}</span>
         </a>
       ) }
     </div>

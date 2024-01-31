@@ -1,14 +1,14 @@
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { useForm, Controller, type SubmitHandler } from 'react-hook-form';
 import PhoneInput from 'react-phone-input-2';
 import FormInput from '../../form-control/form-input/FormInput';
 import Button from '../../ui/button/Button';
-import "../../form-control/_form-control.scss";
-import "./_forms.scss";
+import '../../form-control/_form-control.scss';
+import './_forms.scss';
 
 interface IFormValues {
-  "firstName": string,
-  "email": string,
-  "phone": any,  
+  'firstName': string,
+  'email': string,
+  'phone': any,  
 }
 
 interface MainFormProps {
@@ -20,7 +20,7 @@ interface MainFormProps {
 
 export default function MainForm(
   {
-    formBtnLabel = "MainForm btnLabel",
+    formBtnLabel = 'MainForm btnLabel',
   }: MainFormProps ) {
 
   const { register, handleSubmit, control, formState: { errors } } = useForm<IFormValues>()
@@ -32,23 +32,23 @@ export default function MainForm(
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='form__contact'>
 
-      <FormInput register={register("firstName", { required: "First Name is required" })}
+      <FormInput register={register('firstName', { required: 'First Name is required' })}
         inputPlaceholder='Name' 
-        aria-invalid={errors.firstName ? "true" : "false"}
-        inputError={errors.firstName && errors.firstName.message}
+        aria-invalid={errors.firstName ? 'true' : 'false'}
+        inputError={errors.firstName?.message}
       />
 
-      <FormInput register={register("email", { 
-            required: "E-mail is required",
+      <FormInput register={register('email', { 
+            required: 'E-mail is required',
             pattern: {
               value: /^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$/g,
-              message: "Invalid e-mail"
+              message: 'Invalid e-mail'
             } 
           }
         )} 
         inputType="email"
-        aria-invalid={errors.email ? "true" : "false"}
-        inputError={errors.email && errors.email.message}
+        aria-invalid={errors.email ? 'true' : 'false'}
+        inputError={errors.email?.message}
       />
 
       <Controller

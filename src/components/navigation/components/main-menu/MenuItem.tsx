@@ -1,4 +1,4 @@
-import "./_menu-item.scss";
+import './_menu-item.scss';
 
 interface MenuItemProps{
   itemName?: string;
@@ -17,7 +17,7 @@ export default function MenuItem(
   return (
     <>
       {!singlLink ? (
-        <li className={["main__menu--item", inFooter ? 'in-footer' : ''].join(' ')}>
+        <li className={['main__menu--item', inFooter ? 'in-footer' : ''].join(' ')}>
           <a className="main__menu--link" href={itemRouter}>
             {itemName}
           </a>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import Button from "../button/Button";
-import HouseCard from "../cards/house/HouseCard";
-import ReviewCard from "../cards/review/ReviewCard";
+import Button from '../button/Button';
+import HouseCard from '../cards/house/HouseCard';
+import ReviewCard from '../cards/review/ReviewCard';
 
-import "./_swiper.scss";
+import './_swiper.scss';
 
 interface SwiperProps{
   swiperBtnCatalog?: boolean,
@@ -75,8 +75,8 @@ export default function SwiperSlider({
             slidesOffsetAfter: 24,
             navigation: {
               enabled: true,
-              nextEl: ".swiper-next",
-              prevEl: ".swiper-prev",
+              nextEl: '.swiper-next',
+              prevEl: '.swiper-prev',
             },
           },
           1920: {
@@ -84,14 +84,14 @@ export default function SwiperSlider({
             slidesOffsetAfter: 40,
             navigation: {
               enabled: true,
-              nextEl: ".swiper-next",
-              prevEl: ".swiper-prev",
+              nextEl: '.swiper-next',
+              prevEl: '.swiper-prev',
             },
           }
         }}
       >
-        {sliderType === "houses" && (sliderHouse)}
-        {sliderType === "reviews" && (sliderReview)}
+        {sliderType === 'houses' && (sliderHouse)}
+        {sliderType === 'reviews' && (sliderReview)}
         
       </Swiper>
           
@@ -99,7 +99,7 @@ export default function SwiperSlider({
       <div className="swiper__controls">
 
         <div className="swiper__controls--navigation">
-          {/* Navigation buttons*/}
+          {/* Navigation buttons */}
           <Button
             btnRounded
             btnStyle="yellow"
@@ -125,7 +125,7 @@ export default function SwiperSlider({
         }
 
         { /* Button */
-          sliderType === "reviews" && (
+          sliderType === 'reviews' && (
             <div className="swiper__controls--buttons">
               <Button
                 btnLabel="Сообщение"

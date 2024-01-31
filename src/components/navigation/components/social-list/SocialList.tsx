@@ -1,5 +1,5 @@
 import SocialIcon from '../../../../stories/components/social-icon/SocialIcon';
-import "./_social-list.scss";
+import './_social-list.scss';
 
 interface SocialListProps {
   showInMobile?: boolean;
@@ -19,12 +19,12 @@ export default function SocialList(
     showInFooter = false
   }: SocialListProps ) {
 
-    let listOfSocial = socials.map((item, index ) => 
+    const listOfSocial = socials.map((item, index ) => 
       <SocialIcon iconName={item.name} socialLink={item.url} yellowColor={showInMobile} key={index}/>
     );
 
   return (
-    <div className={["navigation__social", showInMobile ? 'mobile' : null, showInFooter ? 'footer': null].join(' ')}>
+    <div className={['navigation__social', showInMobile ? 'mobile' : null, showInFooter ? 'footer': null].join(' ')}>
       {listOfSocial}
     </div>
   );

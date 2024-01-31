@@ -1,12 +1,12 @@
-import SectionHeader from "../../../sections/section-header/SectionHeader";
-import SectionSwiper from "../../../sections/section-swiper/SectionSwiper";
-import SectionAction from "../../../sections/section-action/SectionAction";
+import SectionHeader from '../../../sections/section-header/SectionHeader';
+import SectionSwiper from '../../../sections/section-swiper/SectionSwiper';
+import SectionAction from '../../../sections/section-action/SectionAction';
 
-import sectionImgAction from "../../../../assets/images/sections/action_1/section_1.webp";
-import sectionImgActionRetina from "../../../../assets/images/sections/action_1/section_1@2x.webp";
+import sectionImgAction from '../../../../assets/images/sections/action_1/section_1.webp';
+import sectionImgActionRetina from '../../../../assets/images/sections/action_1/section_1@2x.webp';
 
-import sectionImgAction2 from "../../../../assets/images/sections/action_2/section_2.webp";
-import sectionImgActionRetina2 from "../../../../assets/images/sections/action_2/section_2@2x.webp";
+import sectionImgAction2 from '../../../../assets/images/sections/action_2/section_2.webp';
+import sectionImgActionRetina2 from '../../../../assets/images/sections/action_2/section_2@2x.webp';
 
 export default function Main() {
   return (

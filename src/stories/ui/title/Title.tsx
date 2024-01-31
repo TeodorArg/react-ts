@@ -25,11 +25,11 @@ interface TitleProps {
 
 export default function Title(
   {
-    titleType = "section",
-    firstPtTitle = "First Part of Tite",
-    secondPtTitle = "",
+    titleType = 'section',
+    firstPtTitle = 'First Part of Tite',
+    secondPtTitle = '',
     forcedWrap = false,
-    titleCustomClass = "",
+    titleCustomClass = '',
   }: TitleProps ) {
 
   const twoLines = (secondPtTitle !=='') ? 'title--wrap' : '';

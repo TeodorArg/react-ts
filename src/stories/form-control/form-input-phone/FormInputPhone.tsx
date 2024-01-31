@@ -19,9 +19,9 @@ interface FormInputPhoneProps {
 
 export default function FormInputPhone(
   {
-    inputLabel = "",
-    inputPhoneMask = "+7 (###) ###-##-##",
-    inputPhoneValue ="9999999999",
+    inputLabel = '',
+    inputPhoneMask = '+7 (###) ###-##-##',
+    inputPhoneValue ='9999999999',
   }: FormInputPhoneProps ) {
 
   const [focused, setInputFocused] = useState(false);
@@ -48,12 +48,12 @@ export default function FormInputPhone(
   return (
     <div className="form__group">
       
-      {inputLabel !== "" && (
+      {inputLabel !== '' && (
         <label className="form__label">{inputLabel}</label>
       )}
 
       <PatternFormat
-        className={['form__group--item phone form__input', inputPhoneClass].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, "")} 
+        className={['form__group--item phone form__input', inputPhoneClass].join(' ').replace(/(?!^[\s]+)([^\s]+)([ ]{2,})/g, '')} 
         format={inputPhoneMask}
         value={inputPhoneValue}
         allowEmptyFormatting mask="_" 

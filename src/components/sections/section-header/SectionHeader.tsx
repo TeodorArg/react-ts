@@ -1,11 +1,11 @@
-import Section from "../../../stories/components/section/Section";
-import Button from "../../../stories/ui/button/Button";
-import HeaderBadges from "./components/header-badges/HeaderBadges";
+import Section from '../../../stories/components/section/Section';
+import Button from '../../../stories/ui/button/Button';
+import HeaderBadges from './components/header-badges/HeaderBadges';
 
-import Img from "./../../../assets/images/sections/home/home-main.webp";
-import ImgRetina from "./../../../assets/images/sections/home/home-main@2x.webp";
+import Img from './../../../assets/images/sections/home/home-main.webp';
+import ImgRetina from './../../../assets/images/sections/home/home-main@2x.webp';
 
-import "./_section-header.scss";
+import './_section-header.scss';
 
 export default function SectionHeader() {
   return (
